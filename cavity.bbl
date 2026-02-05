@@ -1,0 +1,53 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{Nagourney2014}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=03291447217669dd82341064035f727d}{%
+           family={Nagourney},
+           familyi={N\bibinitperiod},
+           given={Warren},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{03291447217669dd82341064035f727d}
+      \strng{fullhash}{03291447217669dd82341064035f727d}
+      \strng{fullhashraw}{03291447217669dd82341064035f727d}
+      \strng{bibnamehash}{03291447217669dd82341064035f727d}
+      \strng{authorbibnamehash}{03291447217669dd82341064035f727d}
+      \strng{authornamehash}{03291447217669dd82341064035f727d}
+      \strng{authorfullhash}{03291447217669dd82341064035f727d}
+      \strng{authorfullhashraw}{03291447217669dd82341064035f727d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Quantum Electronics for Atomic Physics provides a course in quantum electronics for researchers in atomic physics and other related areas such as telecommunications. The book covers the usual topics, such as Gaussian beams, lasers, nonlinear optics and modulation techniques, but also includes a number of areas not usually found in a textbook on quantum electronics. Among the latter are such practical matters as the enhancement of nonlinear processes in abuild-up cavity or periodically polled waveguide, impedance matching into a cavity, laser frequency stabilization (including servomechanism theory), astigmatism in ring cavities, and frequency locking a laser to an atomic or molecular line. The second edition includes a new complete chapter on optical waveguide theory, fiber optic components and fiber lasers. Other updates include new coverage of mode locked fiber lasers, comb generation in a micro-resonator, and periodically poled optical waveguides.}
+      \field{journaltitle}{Quantum Electronics for Atomic Physics and Telecommunication}
+      \field{title}{Quantum Electronics for Atomic Physics and Telecommunication}
+      \field{year}{2014}
+      \verb{doi}
+      \verb 10.1093/acprof:oso/9780199665488.001.0001
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
