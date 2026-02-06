@@ -2,6 +2,7 @@
 \usepackage{graphicx,dcolumn,bm,verbatim,hyperref,color,tabularx,enumitem,soul,floatrow,caption,layout,amsmath,amssymb,mathtools,quantikz,wrapfig,lipsum,tikz} % Required for inserting images
 \usetikzlibrary{patterns}
 \usepackage[sorting=none]{biblatex}
+\numberwithin{equation}{section}
 \addbibresource{export.bib}
 \setlength{\hoffset}{10pt}
 \setlength{\voffset}{-40pt}
@@ -9,6 +10,7 @@
 \setlength{\oddsidemargin}{0pt}
 \setlength{\textwidth}{450pt}
 \setlength{\textheight}{660pt}
+
 \title{Basic theory of a standing wave optical cavity in vacuum}
 
 \date{February 2026}
@@ -68,7 +70,7 @@ Let us start by calculating the reflected, transmitted and intracavity fields. F
         \draw[-Latex,thick] (\xL+0.18,\yTop) -- (\xR-0.18,\yTop); %first
         \draw[-Latex,thick] (\xR+0.18,\yTop) -- (\xR+1.4,\yTop); % first transmission
         \draw[-Latex,thick] (\xR-\arrmarg,\yMid) -- (\xL+0.18,\yMid); %second 
-        \draw[-Latex,thick] (\xL-0.18,\yMid) -- (\xL+-1.4,\yMid); %second reflection
+        \draw[-Latex,thick] (\xL-0.18,\yMid) -- (\xL-1.4,\yMid); %second reflection
         \draw[-Latex,thick] (\xL+\arrmarg,\yBot) -- (\xR-0.18,\yBot); %third
         \draw[-Latex,thick] (\xR+0.18,\yBot) -- (\xR+1.4,\yBot); %third transmission
         \draw[-Latex,thick] (\xR-\arrmarg,\yBotB) -- (\xL+0.18,\yBotB); %fourth
@@ -99,9 +101,119 @@ Let us start by calculating the reflected, transmitted and intracavity fields. F
 \subsection{Reflection and transmission at an interface}
 
 The first question we need to answer before moving on to calculating reflected field, is the following. If light is shined to an interface from one side and the interface has reflected coefficient $r$ and transmitted coefficient $t$, what would be the reflected and transmitted coefficients $r'$ and $t'$ if the light is shined from another side? This elegant derivation \cite{Nagourney2014} of the relation between the field transmission and reflection
-coefficients was made by the British physicist Sir George Gabriel Stokes. He assumed that there was no dissipation at the interface and therefore the process obeyed time-reversal invariance. The three waves are shown on the left in the figure. The time-reversed case appears in the center plot. When we reverse time, we need to include three additional waves: the reflection from the bottom wave, and the transmission of both the bottom and top waves. All of the waves are shown in the plot on the right. In order for the right-hand plot to be equivalent to the time-reversed center plot, the two waves in the upper left must sum to E and the two waves in the lower left must
-sum to zero. Thus, $$E = E t t' + E r r' \text{  and  } 0 = E r t + E r' t $$
+coefficients was made by G. G. Stokes. He assumed that there was no dissipation at the interface and therefore the process obeyed time-reversal invariance. The three waves are shown on the left in the figure \ref{fig:time_reversal}. The time-reversed case appears in the center plot. When we reverse time, we need to include three additional waves: the reflection from the bottom wave, and the transmission of both the bottom and top waves. All of the waves are shown in the plot on the right. In order for the right-hand plot to be equivalent to the time-reversed center plot, the two waves in the upper left must sum to E and the two waves in the lower left must
+sum to zero. Thus,
+\begin{align}
+E = E t t' + E r r \\
+0 = E r t + E r' t
+\end{align}
+from which we conclude that
+\begin{align}
+t t' +  r^2 = 0 \label{eq:time_rev}\\
+r' = - r
+\end{align}
+The fact, that we assumed no dissipation should mean, that
+\begin{align}
+t^2 + r^2 = 1 \label{eq:energy_cons}\\
+t'^2 + r'^2 = 1
+\end{align}
+So from \ref{}
 
+\begin{figure}[H]
+    \centering
+    
+    \begin{tikzpicture}[>=Latex, line cap=round, line join=round, scale = 0.8]
+
+        % ---------- styles
+        \tikzset{
+        axis/.style={thin},
+        beam/.style={very thick, -Latex},
+        lbl/.style={font=\large},
+        cap/.style={font=\large},
+        }
+
+        % ---------- helper: one "interface" cross
+        \newcommand{\interface}{
+        \draw[axis] (-2.4,0) -- (2.4,0);
+        \draw[axis] (0,-2.1) -- (0,2.1);
+        \fill (0,0) circle (1.2pt);
+        }
+
+        % ============================================================
+        % Panel 1: Original
+        \begin{scope}[shift={(0,0)}]
+        \interface
+
+        % beams
+        \draw[beam] (-2.2,1.9) -- (0,0);
+        \draw[beam] (0,0) -- (2.2,1.9);
+        \draw[beam] (0,0) -- (1.2,-2.2);
+
+        % labels
+        \node[lbl,above left] at (-2.2,1.9) {$E$};
+        \node[lbl,above]      at (2.2,1.9) {$Er$};
+        \node[lbl,below]      at (1.2,-2.2) {$Et$};
+
+        \node[lbl,left] at (-2.1,0.3) {$r,t$};
+        \node[lbl,left] at (-2.1,-0.3) {$r',t'$};
+
+        \node[below=18pt] at (0,-2.35) {Original};
+        \end{scope}
+
+        % ============================================================
+        % Panel 2: Time-reversed
+        \begin{scope}[shift={(6.8,0)}]
+        \interface
+
+        % time-reversed arrows (approx. as in figure)
+        \draw[beam] (0,0) -- (-2.2,1.9);   % E going out
+        \draw[beam] (2.2,1.9) -- (0,0);    % Er coming in
+        \draw[beam] (1.2,-2.2) -- (0,0);   % Et coming in
+
+        % labels
+        \node[lbl,above]      at (-2.2,1.9) {$E$};
+        \node[lbl,above]      at (2.2,1.9) {$Er$};
+        \node[lbl,below]      at (1.2,-2.2) {$Et$};
+
+        \node[below=18pt] at (0,-2.35) {Time-reversed};
+        \end{scope}
+
+        % ============================================================
+        % Panel 3: Time-reversed (incl. all beams)
+        \begin{scope}[shift={(13.6,0)}]
+        \interface
+
+        % main reflected/transmitted as in panel 1
+        \draw[beam] (2.2,1.9) -- (0,0);
+        \draw[beam] (1.2,-2.2) -- (0,0);
+        \node[lbl,above] at (2.2,1.9) {$Er$};
+        \node[lbl,below] at (1.2,-2.2) {$Et$};
+
+        % extra beams (slightly offset, double-like)
+        % upper-left pair: Err and Ett'
+        \draw[beam] (0,0) -- (-2.05,2.05);
+        \draw[beam] ($(0,0)+(0.10,0)$) -- ($(-2.05,2.05)+(0.10,0)$);
+        \node[lbl,above left] at (-0.5,1.55) {$Err$};
+        \node[lbl,left]       at (-1.30,0.95) {$Ett'$};
+
+        % \node[lbl,above] at (-0.55,2.05) {must sum to $E$};
+
+        % lower-left pair: Ert and Etr'
+        \draw[beam] (0,0) -- (-0.90,-2.35);
+        \draw[beam] ($(0,0)+(0.12,0)$) -- ($(-0.90,-2.35)+(0.12,0)$);
+        \node[lbl,below left] at (-0.95,-1.65) {$Ert$};
+        \node[lbl,below]      at (-0.1,-2) {$Etr'$};
+
+        % \node[lbl,below] at (-0.70,-2.05) {must sum to $0$};
+        % \node[below=18pt,align=center,text width=3.6cm] at (0,-2.35) {Time-reversed\\(incl.\ all beams)};
+        
+        \node[below=18pt] at (0,-2.35) {Time-reversed (all beams)};
+        \end{scope}
+
+    \end{tikzpicture}
+    \caption{Original and time-reversed interaction between a beam and an interface}
+    \label{fig:time_reversal}
+\end{figure}
 
 
 
