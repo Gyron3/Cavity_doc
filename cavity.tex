@@ -22,102 +22,9 @@
 
 \maketitle
 
-\section{Reflected, transmitted and intracavity fields}
-
-Let us start by calculating the reflected, transmitted and intracavity fields. Figure \ref{fig:cavity} depicts the schematic of the electromagnetic wave traveling inside the optical cavity. We assume that the mirrors $1$ and $2$ have corresponding amplitude transmission and reflection coefficients $r_1$, $t_1$ and $r_2$, $t_2$. The intracavity medium is lossless, however there is a loss of amplitude due to scattering at the mirror surfaces: $t_a$ at Mirror $1$ and $t_b$ at Mirror $2$. This model is the closest approximation of a two-mirror cavity inside ultra-high vacuum environment.
 
 
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}[x=1cm,y=1cm,>=Latex, line cap=round, line join=round]
-
-        % --- geometry parameters
-        \def\xL{0}        % mirror 1 x
-        \def\xR{12}       % mirror 2 x
-
-        \def\yTop{1.3}
-        \def\yMid{0.5}
-        \def\yBot{-0.3}
-        \def\yBotB{-1.1}
-
-        \def\boxL{4.5}
-        \def\boxR{9.5}
-        \def\boxB{-1.6}
-        \def\boxT{2.0}
-        \def\arrmarg{1.0}
-
-        % --- mirrors (hatched)
-        \draw[pattern=north east lines] (\xL-0.18,\boxB-0.2) rectangle (\xL+0.08,\boxT+0.2);
-        \draw[pattern=north east lines] (\xR-0.08,\boxB-0.2) rectangle (\xR+0.18,\boxT+0.2);
-        \filldraw (\xL+0.08,\boxB-0.2) rectangle (\xL+0.18,\boxT+0.2);
-        \filldraw (\xR-0.08,\boxB-0.2) rectangle (\xR-0.18,\boxT+0.2);
-
-        \node[below] at (\xL,\boxB-0.25) {Mirror 1};
-        \node[below] at (\xR,\boxB-0.25) {Mirror 2};
-
-        % --- labels above mirrors
-        \node[above] at (\xL, \boxT+0.35) {$t_1\ \ r_1\ \ t_a$};
-        \node[above] at (\xR, \boxT+0.35) {$r_2\ \ t_2\ \ t_b$};
-
-        % % --- lossy medium box
-        % \draw (\boxL,\boxB) rectangle (\boxR,\boxT);
-        % \node at ({(\boxL+\boxR)/2},{(\boxB+\boxT)/2}) {Lossy medium};
-        % \node at ({(\boxL+\boxR)/2},{\boxT-0.55}) {$t$};
-
-
-        % arrows
-        \draw[-Latex,thick] (-2,\yTop) -- (\xL-0.18,\yTop); %input
-        \draw[-Latex,thick] (\xL+0.18,\yTop) -- (\xR-0.18,\yTop); %first
-        \draw[-Latex,thick] (\xR+0.18,\yTop) -- (\xR+1.4,\yTop); % first transmission
-        \draw[-Latex,thick] (\xR-\arrmarg,\yMid) -- (\xL+0.18,\yMid); %second 
-        \draw[-Latex,thick] (\xL-0.18,\yMid) -- (\xL-1.4,\yMid); %second reflection
-        \draw[-Latex,thick] (\xL+\arrmarg,\yBot) -- (\xR-0.18,\yBot); %third
-        \draw[-Latex,thick] (\xR+0.18,\yBot) -- (\xR+1.4,\yBot); %third transmission
-        \draw[-Latex,thick] (\xR-\arrmarg,\yBotB) -- (\xL+0.18,\yBotB); %fourth
-        \draw[-Latex,thick] (\xL-0.18,\yBotB) -- (\xL-1.4,\yBotB); %fourth reflection
-
-
-
-        % reflection loops
-        \draw[thick] (\xR-\arrmarg,\yTop) .. controls (\xR,\yTop) and (\xR,\yMid) .. (\xR-\arrmarg,\yMid); %1-2
-        \draw[thick] (\xL+\arrmarg,\yMid) .. controls (\xL,\yMid) and (\xL,\yBot) .. (\xL+\arrmarg,\yBot); %2-3
-        \draw[thick] (\xR-\arrmarg,\yBot) .. controls (\xR,\yBot) and (\xR,\yBotB) .. (\xR-\arrmarg,\yBotB); %3-4
-        \draw[-Latex,thick] (\xL-\arrmarg,\yTop) .. controls (\xL,\yTop) and (\xL,\yTop+0.8) .. (\xL-\arrmarg,\yTop+0.8); %0
-
-        % another round-trip sketch (one more loop at mirror 2 and back) to suggest series
-
-
-
-
-        % --- distance L arrow
-        \draw[Latex-Latex] (\xL,\boxB-1) -- (\xR,\boxB-1);
-        \node[below] at ({(\xL+\xR)/2},\boxB-0.5) {$L$};
-
-    \end{tikzpicture}
-    \caption{Optical cavity schematic}
-    \label{fig:cavity}
-\end{figure}
-
-\subsection{Reflection and transmission at an interface}
-
-The first question we need to answer before moving on to calculating reflected field, is the following. If light is shined to an interface from one side and the interface has reflected coefficient $r$ and transmitted coefficient $t$, what would be the reflected and transmitted coefficients $r'$ and $t'$ if the light is shined from another side? This elegant derivation \cite{Nagourney2014} of the relation between the field transmission and reflection
-coefficients was made by G. G. Stokes. He assumed that there was no dissipation at the interface and therefore the process obeyed time-reversal invariance. The three waves are shown on the left in the figure \ref{fig:time_reversal}. The time-reversed case appears in the center plot. When we reverse time, we need to include three additional waves: the reflection from the bottom wave, and the transmission of both the bottom and top waves. All of the waves are shown in the plot on the right. In order for the right-hand plot to be equivalent to the time-reversed center plot, the two waves in the upper left must sum to E and the two waves in the lower left must
-sum to zero. Thus,
-\begin{align}
-E = E t t' + E r r \\
-0 = E r t + E r' t
-\end{align}
-from which we conclude that
-\begin{align}
-t t' +  r^2 = 0 \label{eq:time_rev}\\
-r' = - r
-\end{align}
-The fact, that we assumed no dissipation should mean, that
-\begin{align}
-t^2 + r^2 = 1 \label{eq:energy_cons}\\
-t'^2 + r'^2 = 1
-\end{align}
-So from \ref{}
+\section{Reflection and transmission at an interface}
 
 \begin{figure}[H]
     \centering
@@ -215,7 +122,180 @@ So from \ref{}
     \label{fig:time_reversal}
 \end{figure}
 
+The first question we need to answer before moving on to calculating reflected, transmitted and intracavity fields, is the following. If light is shined to an interface from one side and the interface has reflected coefficient $r$ and transmitted coefficient $t$, what would be the reflected and transmitted coefficients $r'$ and $t'$ if the light is shined from another side? This elegant derivation \cite{Nagourney2014} of the relation between the field transmission and reflection
+coefficients was made by G. G. Stokes. He assumed that there was no dissipation at the interface and therefore the process obeyed time-reversal invariance. The three waves are shown on the left in the figure \ref{fig:time_reversal}. The time-reversed case appears in the center plot. When we reverse time, we need to include three additional waves: the reflection from the bottom wave, and the transmission of both the bottom and top waves. All of the waves are shown in the plot on the right. In order for the right-hand plot to be equivalent to the time-reversed center plot, the two waves in the upper left must sum to E and the two waves in the lower left must
+sum to zero. Thus,
+\begin{align}
+E &= E t t' + E r r \\
+0 &= E r t + E r' t
+\end{align}
+from which we conclude that
+\begin{align}
+t' &= \frac{1 - r^2}{t} \label{eq:t_prime_0}\\
+r' &= - r \label{eq:r_prime_0}
+\end{align}
+Here we assume that $r,r',t,t' \in \mathbb{C}$. The fact, that we assumed no dissipation should mean, that
+\begin{align}
+|t|^2 + |r|^2 &= 1 \label{eq:en_cons_1}\\
+|t'|^2 + |r'|^2 &= 1 \label{eq:en_cons_2}
+\end{align}
+Let's plug \ref{eq:r_prime_0} and \ref{eq:t_prime_0} to \ref{eq:en_cons_2}. After some algebra we arrive to 
+\begin{align}
+    \frac{1}{|t|^2} (|1-r^2|^2-(1-|r|^2)^2) &= 0
+\end{align}
+Since $|r| \le 1$, ($r = |r| e^{i \varphi_r}$) it should mean that 
+\begin{align}
+    |1-r^2| &= 1-|r|^2 = \sqrt{1-2 |r|^2 \cos (2 \varphi_r) + |r|^4} \label{eq:1-r}
+\end{align}
+Equation \ref{eq:1-r} is satisfied $\forall ~|r| \le 1$ only if $\varphi_r = 0$ or $\pi$. That means that $r,r' \in \mathbb{R}$. Then ($t = |t| e^{i \varphi_t}$)
+\begin{align}
+    t' &= \frac{|t|^2}{t} = |t| e^{-i \varphi_t} = t^*
+\end{align}
+So finally we have
+\begin{align}
+    r' &= -r , ~~~~r,r' \in \mathbb{R} \label{eq:r_prime}\\
+    t' &= t^*, ~~~~t,t' \in \mathbb{C} \label{eq:t_prime}
+\end{align}
 
+
+
+
+\section{Reflected, transmitted and intracavity fields}
+
+Let us start calculating the reflected, transmitted and intracavity fields. Figure \ref{fig:cavity} depicts the schematic of the electromagnetic wave traveling inside the optical cavity. We assume that the mirrors $1$ and $2$ have corresponding amplitude transmission and reflection coefficients $r_1$, $t_1$ and $r_2$, $t_2$. The intracavity medium is lossless, however there is a loss of amplitude due to scattering at the mirror surfaces: $t_a$ at Mirror $1$ and $t_b$ at Mirror $2$ ($t = t_a t_b$). This model is the closest approximation of a two-mirror cavity inside ultra-high vacuum environment.
+
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[x=1cm,y=1cm,>=Latex, line cap=round, line join=round, scale = 0.85]
+
+        % --- geometry parameters
+        \def\xL{0}        % mirror 1 x
+        \def\xR{10}       % mirror 2 x
+
+        \def\yTop{1.3}
+        \def\yMid{0.5}
+        \def\yBot{-0.3}
+        \def\yBotB{-1.1}
+
+        \def\boxL{4.5}
+        \def\boxR{9.5}
+        \def\boxB{-1.6}
+        \def\boxT{2.0}
+        \def\arrmarg{1.0}
+
+        % --- mirrors (hatched)
+        \draw[pattern=north east lines] (\xL-0.18,\boxB-0.2) rectangle (\xL+0.08,\boxT+0.2);
+        \draw[pattern=north east lines] (\xR-0.08,\boxB-0.2) rectangle (\xR+0.18,\boxT+0.2);
+        \filldraw (\xL+0.08,\boxB-0.2) rectangle (\xL+0.18,\boxT+0.2);
+        \filldraw (\xR-0.08,\boxB-0.2) rectangle (\xR-0.18,\boxT+0.2);
+
+        \node[below] at (\xL,\boxB-0.25) {Mirror 1};
+        \node[below] at (\xR,\boxB-0.25) {Mirror 2};
+
+        % --- labels above mirrors
+        \node[above] at (\xL, \boxT+0.35) {$t_1\ \ r_1\ \ t_a$};
+        \node[above] at (\xR, \boxT+0.35) {$r_2\ \ t_2\ \ t_b$};
+
+        % % --- lossy medium box
+        % \draw (\boxL,\boxB) rectangle (\boxR,\boxT);
+        % \node at ({(\boxL+\boxR)/2},{(\boxB+\boxT)/2}) {Lossy medium};
+        % \node at ({(\boxL+\boxR)/2},{\boxT-0.55}) {$t$};
+
+
+        % arrows
+        \draw[-Latex,thick] (-2,\yTop) -- (\xL-0.18,\yTop); %input
+        \draw[-Latex,thick] (\xL+0.18,\yTop) -- (\xR-0.18,\yTop); %first
+        \draw[-Latex,thick] (\xR+0.18,\yTop) -- (\xR+1.4,\yTop); % first transmission
+        \draw[-Latex,thick] (\xR-\arrmarg,\yMid) -- (\xL+0.18,\yMid); %second 
+        \draw[-Latex,thick] (\xL-0.18,\yMid) -- (\xL-1.4,\yMid); %second reflection
+        \draw[-Latex,thick] (\xL+\arrmarg,\yBot) -- (\xR-0.18,\yBot); %third
+        \draw[-Latex,thick] (\xR+0.18,\yBot) -- (\xR+1.4,\yBot); %third transmission
+        \draw[-Latex,thick] (\xR-\arrmarg,\yBotB) -- (\xL+0.18,\yBotB); %fourth
+        \draw[-Latex,thick] (\xL-0.18,\yBotB) -- (\xL-1.4,\yBotB); %fourth reflection
+
+        \node[above] at (-1.7,\yTop) {$E_0$};
+        \node[left] at (-0.9,\yTop+0.9) {$- E_0 r_1$};
+        \node[above] at (5.0,\yTop) {$E_0 t^*_1 t_a e^{-ikx}$};
+        \node[above] at (5.0,\yMid) {$E_0 t^*_1 t_a t_b r_2 t_b e^{-ikx} e^{-ikL}$};
+        \node[above] at (5.0,\yBot) {$E_0 t^*_1 t_a t_b r_2 t_b t_a r_1 t_a e^{-ikx} e^{-2ikL}$};
+        \node[above] at (5.0,\yBotB) {$E_0 t^*_1 t_a t_b r_2 t_b t_a r_1 t_a t_b r_2 t_b e^{-ikx} e^{-3ikL}$};
+
+        \node[above] at (11.5,\yTop) {$E_0 t^*_1 t t_2 e^{-ikL}$};
+        \node[above] at (12.0,\yBot) {$E_0 t^*_1 t^3 r_1 r_2 t_2 e^{-3ikL}$};
+
+        \node[above] at (-2.0,\yMid) {$E_0 t^*_1 t^2 r_2 t_1 e^{-2ikL}$};
+        \node[above] at (-2.0,\yBotB) {$E_0 t^*_1 t^4 r_1^2 r_2^2 t_1 e^{-4ikL}$};
+
+
+        % reflection loops
+        \draw[thick] (\xR-\arrmarg,\yTop) .. controls (\xR,\yTop) and (\xR,\yMid) .. (\xR-\arrmarg,\yMid); %1-2
+        \draw[thick] (\xL+\arrmarg,\yMid) .. controls (\xL,\yMid) and (\xL,\yBot) .. (\xL+\arrmarg,\yBot); %2-3
+        \draw[thick] (\xR-\arrmarg,\yBot) .. controls (\xR,\yBot) and (\xR,\yBotB) .. (\xR-\arrmarg,\yBotB); %3-4
+        \draw[-Latex,thick] (\xL-\arrmarg,\yTop) .. controls (\xL,\yTop) and (\xL,\yTop+0.8) .. (\xL-\arrmarg,\yTop+0.8); %0
+
+        % --- distance L arrow
+        \draw[Latex-Latex] (\xL,\boxB-1) -- (\xR,\boxB-1);
+        \node[below] at ({(\xL+\xR)/2},\boxB-0.5) {$L$};
+
+    \end{tikzpicture}
+    \caption{Optical cavity schematic}
+    \label{fig:cavity}
+\end{figure}
+
+\subsection{Reflected field}
+If the incident amplitude of the field is $E_0$, by summing all the paths that contribute to the reflected field and using \ref{eq:r_prime}, \ref{eq:t_prime} we arrive to the following series (we relabel $t = t_a t_b$)
+\begin{align*}
+    E_r &= E_0 ( -r_1 + t^*_1 t r_2 t t_1 e^{-2ikL} + t^*_1 t r_2 t r_1 t r_2 t t_1 e^{-4ikL} + ...) = \\
+    &= E_0 ( -r_1 + |t_1|^2 t^2 r_2 e^{-2ikL} (1 + t^2 r_1 r_2 e^{-2ikL} + (t^2 r_1 r_2 e^{-2ikL})^2 + ...)) = \\
+    &= E_0 (-r_1 + \frac{|t_1|^2 t^2 r_2 e^{-2ikL}}{1 - t^2 r_1 r_2 e^{-2ikL}}) =  E_0 \frac{t^2 r_2 e^{-2ikL} - r_1}{1 - t^2 r_1 r_2 e^{-2ikL}}
+\end{align*}
+We obtain an expression for the reflected field:
+\begin{align}
+    E_r = E_0\frac{t^2 r_2 e^{-2ikL} - r_1}{1 - t^2 r_1 r_2 e^{-2ikL}} \label{eq:E_r}
+\end{align}
+
+\subsection{Transmitted field}
+If the incident amplitude of the field is $E_0$, by summing all the paths that contribute to the transmitted field and using \ref{eq:r_prime}, \ref{eq:t_prime} we arrive to the following series (we relabel $t = t_a t_b$)
+\begin{align*}
+    E_t &= E_0 ( t_1^* t t_2 e^{-ikL} + t^*_1 t r_2 t r_1 t t_2 e^{-3ikL} + ...) = \\
+    &= E_0 t_1^* t t_2 e^{-ikL} ( 1 + t^2 r_1 r_2 e^{-2ikL} + (t^2 r_1 r_2 e^{-2ikL})^2 + ... ) = \\
+    &= E_0 \frac{t_1^* t t_2 e^{-ikL}}{1 - t^2 r_1 r_2 e^{-2ikL}}
+\end{align*}
+We obtain an expression for the transmitted field:
+\begin{align}
+    E_t = E_0 \frac{t_1^* t t_2 e^{-ikL}}{1 - t^2 r_1 r_2 e^{-2ikL}} \label{eq:E_t}
+\end{align}
+
+\subsection{Intracavity field}
+We need to calculate fields propagating in the direction of incident light ($E_c^+(x)$), in the opposite direction ($E_c^-(x)$) and full intracavity field ($E_c(x)$). The process of calculation is very similar to the reflected and transmitted fields calculations, but this time we have to take care of at which point in the cavity the field is being calculated. Let's pick a point at a distance $x$ from the first mirror and calculate forward and backward fields there. For the forward field:
+\begin{align*}
+    E_c^+(x) &= E_0 (t_1^* t_a e^{-ikx} + t_1^* t_a t_b r_2 t_b t_a r_1 t_a e^{-ikx} e^{-2ikL} + ...) = \\
+    &= E_0 t_1^* t_a e^{-ikx} (1 + t^2 r_1 r_2 e^{-2ikL} + (t^2 r_1 r_2 e^{-2ikL})^2 + ...) = \\
+    &= E_0 \frac{t_1^* t_a e^{-ikx}}{1-t^2 r_1 r_2 e^{-2ikL}}
+\end{align*}
+We obtain:
+\begin{align}
+    E_c^+(x) = E_0 \frac{t_1^* t_a e^{-ikx}}{1-t^2 r_1 r_2 e^{-2ikL}} \label{eq:E_c_f}
+\end{align}
+For the backward field:
+\begin{align*}
+    E_c^-(x) &= E_0 (t_1^* t_a t_b r_2 t_b e^{-ik(2L-x)} + t_1^* t_a t_b r_2 t_b t_a r_1 t_a t_b r_2 t_b e^{-ik(4L-x)} + ...) = \\
+    &= E_0 t_1^* t r_2 t_b e^{-ik(2L-x)} (1 + t^2 r_1 r_2 e^{-2ikL} + (t^2 r_1 r_2 e^{-2ikL})^2 + ...) = \\
+    &= E_0 \frac{t_1^* t r_2 t_b e^{-ik(2L-x)}}{1-t^2 r_1 r_2 e^{-2ikL}}
+\end{align*}
+We obtain:
+\begin{align}
+    E_c^-(x) = E_0 \frac{t_1^* t r_2 t_b e^{-ik(2L-x)}}{1-t^2 r_1 r_2 e^{-2ikL}}
+\end{align}
+Full intracavity field:
+\begin{align*}
+  E_c(x) = E_c^+(x) + E_c^-(x) = E_0 \frac{t_1^* t_a e^{-ikx} + t_1^* t r_2 t_b e^{-ik(2L-x)}}{1-t^2 r_1 r_2 e^{-2ikL}}
+\end{align*}
+We obtain:
+\begin{align}
+    E_c(x) = E_0  \frac{t_1^* (t_a e^{ik(L-x)} + t t_b r_2 e^{-ik(L-x)})e^{-ikL}}{1-t^2 r_1 r_2 e^{-2ikL}}
+\end{align}
 
 \printbibliography
 
