@@ -330,7 +330,7 @@ The maximum internal intensity is obtained on resonance (when $\tilde{x} = m/\ti
     I_c^{res} &= I_0 \frac{4|t_1|^2 }{(1 - t^2 r_1 r_2)^2}
 \end{align}
 
-\section{Finesse and impedance mismatch}
+\section{Finesse}
 Parameter of the cavity, characterizing the "goodness" of the cavity is called $\textit{finesse}$ ($\mathcal{F}$). It's defined as follows:
 \begin{align}
     \mathcal{F} &\coloneqq \frac{FSR}{\gamma}
@@ -347,15 +347,25 @@ After some algebra and series expansions (since $1-t^2 r_1 r_2 \ll 1$) we get:
 \end{align}
 Finesse is also related to the intensity enhancement inside of the cavity:
 \begin{align}
-    \frac{I_c^{res}}{I_0} &= \frac{4 \mathcal{F}}{\pi} \frac{1-r_1^2}{1-t^2 r_1 r_2} \label{eq:enh}
+    \frac{I_c^{res}}{I_0} &= 4 \frac{1-r_1^2}{(1-t^2 r_1 r_2)^2} \label{eq:enh}
 \end{align}
 In a lossless and symmetric ($r_1 = r_2,~t=0$) case it simply yields:
 \begin{align}
     \frac{I_c^{res}}{I_0} &= \frac{4 \mathcal{F}}{\pi} \label{eq:enh_ideal}
 \end{align}
-Please take into account that "lossless and symmetric ($r_1 = r_2,~t=0$) case" is never actually achievable in real life, and the results \ref{eq:enh_ideal} for ideal case and \ref{eq:enh} for a real case vary \textbf{significantly}, sometimes \textbf{by several orders of magnitude}. So let's elaborate on how to evaluate useful quantities for a real-life cavity.
+Please take into account that "lossless and symmetric ($r_1 = r_2,~t=0$) case" is never actually achievable in real life, and the results \ref{eq:enh_ideal} for ideal case and \ref{eq:enh} for a real case vary \textbf{significantly}, sometimes \textbf{by several orders of magnitude}.
 
-
+It turns out that if one experimentally measures finesse, reflected intensity on resonance and transmitted intensity on resonance, intracavity intensity, mirror parameters and cavity losses can be derived from these three parameters with simple expressions:
+\begin{align}
+    \frac{I_c^{res}}{I_0} &= \frac{4 \mathcal{F}}{\pi} (1 - \sqrt{R_c}) \\
+    R_1 &= 1- \pi \frac{1 - \sqrt{R_c}}{\mathcal{F}} \\
+    R_2 &= 1- \pi \frac{T_c}{\mathcal{F} (1 - \sqrt{R_c})} \\
+    A_{loss} &= 1 - T_a T_b = \pi \frac{1-R_c-T_c}{2 \mathcal{F} (1 - \sqrt{R_c})}
+\end{align}
+$A_{loss}$ here is a single-pass loss coefficient. If we want to calculate the overall steady-state loss coefficient its given by a trivial expression (which is consistent with the equations above):
+\begin{align}
+    A_{loss}^{full} &= 1 - R_c - T_c
+\end{align}
 \printbibliography
 
 \end{document}
