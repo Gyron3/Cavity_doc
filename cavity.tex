@@ -160,7 +160,7 @@ So finally we have
 
 
 
-\section{Reflected, transmitted and intracavity fields}
+\section{Reflected, transmitted and intracavity fields and intensities}
 
 Let us start calculating the reflected, transmitted and intracavity fields. Figure \ref{fig:cavity} depicts the schematic of the electromagnetic wave traveling inside the optical cavity. We assume that the mirrors $1$ and $2$ have corresponding amplitude transmission and reflection coefficients $r_1$, $t_1$ and $r_2$, $t_2$. The intracavity medium is lossless, however there is a loss of amplitude due to scattering at the mirror surfaces: $t_a$ at Mirror $1$ and $t_b$ at Mirror $2$ ($t = t_a t_b$). This model is the closest approximation of a two-mirror cavity inside ultra-high vacuum environment.
 
@@ -243,7 +243,7 @@ Let us start calculating the reflected, transmitted and intracavity fields. Figu
     \label{fig:cavity}
 \end{figure}
 
-\subsection{Reflected field}
+\subsection{Reflected field and intensity}
 If the incident amplitude of the field is $E_0$, by summing all the paths that contribute to the reflected field and using \ref{eq:r_prime}, \ref{eq:t_prime} we arrive to the following series (we relabel $t = t_a t_b$)
 \begin{align*}
     E_r &= E_0 ( -r_1 + t^*_1 t r_2 t t_1 e^{-2ikL} + t^*_1 t r_2 t r_1 t r_2 t t_1 e^{-4ikL} + ...) = \\
@@ -253,6 +253,19 @@ If the incident amplitude of the field is $E_0$, by summing all the paths that c
 We obtain an expression for the reflected field:
 \begin{align}
     E_r = E_0\frac{t^2 r_2 e^{-2ikL} - r_1}{1 - t^2 r_1 r_2 e^{-2ikL}} \label{eq:E_r}
+\end{align}
+Let's remember that
+\begin{align}
+    FSR &= \frac{c}{2L} \\
+    kL &= \frac{2 \pi L f}{c} = \frac{\pi f}{FSR} = \pi \tilde{f}
+\end{align}
+where $\tilde{f} = \frac{f}{FSR}$ is a normalized frequency. After some algebra we get an expression for reflected intensity:
+\begin{align}
+    I_r &= I_0 \frac{r_1^2 + t^4 r_2^2 - 2t^2 r_1 r_2 \cos (2 \pi \tilde{f})}{1 + (t^2 r_1 r_2)^2 - 2 t^2 r_1 r_2 \cos (2 \pi \tilde{f})}
+\end{align}
+The minimum reflected intensity is obtained on resonance (when $\tilde{f} \in \mathbb{N}$):
+\begin{align}
+    I_r^{res} &= I_0 \frac{(r_1 - t^2 r_2)^2}{(1 - t^2 r_1 r_2)^2}
 \end{align}
 
 \subsection{Transmitted field}
@@ -265,6 +278,14 @@ If the incident amplitude of the field is $E_0$, by summing all the paths that c
 We obtain an expression for the transmitted field:
 \begin{align}
     E_t = E_0 \frac{t_1^* t t_2 e^{-ikL}}{1 - t^2 r_1 r_2 e^{-2ikL}} \label{eq:E_t}
+\end{align}
+After some algebra we get an expression for transmitted intensity ($\tilde{f} = \frac{f}{FSR}$):
+\begin{align}
+    I_t &= I_0 \frac{|t_1|^2 |t_2|^2 t^2}{1 + (t^2 r_1 r_2)^2 - 2 t^2 r_1 r_2 \cos (2 \pi \tilde{f})}
+\end{align}
+The maximum transmitted intensity is obtained on resonance (when $\tilde{f} \in \mathbb{N}$):
+\begin{align}
+    I_t^{res} &= I_0 \frac{|t_1|^2 |t_2|^2 t^2}{(1 - t^2 r_1 r_2)^2}
 \end{align}
 
 \subsection{Intracavity field}
@@ -284,18 +305,33 @@ For the backward field:
     &= E_0 t_1^* t r_2 t_b e^{-ik(2L-x)} (1 + t^2 r_1 r_2 e^{-2ikL} + (t^2 r_1 r_2 e^{-2ikL})^2 + ...) = \\
     &= E_0 \frac{t_1^* t r_2 t_b e^{-ik(2L-x)}}{1-t^2 r_1 r_2 e^{-2ikL}}
 \end{align*}
-We obtain:
+It's here that we have to shamefully acknowledge that the amplitude reflection coefficients are actually negative, because upon reflection from a medium with higher refractive index the light undergoes a $\pi$ phase shift. So if we take this into account we obtain:
 \begin{align}
-    E_c^-(x) = E_0 \frac{t_1^* t r_2 t_b e^{-ik(2L-x)}}{1-t^2 r_1 r_2 e^{-2ikL}}
+    E_c^-(x) = E_0 \frac{-t_1^* t |r_2| t_b e^{-ik(2L-x)}}{1-t^2 r_1 r_2 e^{-2ikL}}
 \end{align}
 Full intracavity field:
 \begin{align*}
-  E_c(x) = E_c^+(x) + E_c^-(x) = E_0 \frac{t_1^* t_a e^{-ikx} + t_1^* t r_2 t_b e^{-ik(2L-x)}}{1-t^2 r_1 r_2 e^{-2ikL}}
+  E_c(x) = E_c^+(x) + E_c^-(x) = E_0 \frac{t_1^* t_a e^{-ikx} - t_1^* t |r_2| t_b e^{-ik(2L-x)}}{1-t^2 r_1 r_2 e^{-2ikL}}
 \end{align*}
 We obtain:
 \begin{align}
-    E_c(x) = E_0  \frac{t_1^* (t_a e^{ik(L-x)} + t t_b r_2 e^{-ik(L-x)})e^{-ikL}}{1-t^2 r_1 r_2 e^{-2ikL}}
+    E_c(x) = E_0  \frac{t_1^* (t_a e^{ik(L-x)} - t t_b |r_2| e^{-ik(L-x)})e^{-ikL}}{1-t^2 r_1 r_2 e^{-2ikL}}
 \end{align}
+After some algebra we get an expression for intracavity intensity ($\tilde{f} = \frac{f}{FSR}$, $\tilde{x} = \frac{x}{L}$):
+\begin{align}
+    I_c(\tilde{x}) &= I_0 \frac{|t_1|^2(t_a^2 + t^2 t_b^2 r_2^2 - 2 t^2 |r_2| \cos (2 \pi \tilde{f} (\tilde{x} - 1)))}{1 + (t^2 r_1 r_2)^2 - 2 t^2 r_1 r_2 \cos (2 \pi \tilde{f})}
+\end{align}
+The maximum internal intensity is obtained on resonance (when $\tilde{f} \in \mathbb{N}$):
+\begin{align}
+    I_c^{res} &= I_0 \frac{|t_1|^2 (t_a + t t_b |r_2|)^2}{(1 - t^2 r_1 r_2)^2}
+\end{align}
+
+\section{Finesse}
+Parameter of the cavity, characterizing the "goodness" of the cavity is called $\textit{finesse}$ ($\mathcal{F}$). It's defined as follows:
+\begin{align}
+    \mathcal{F} &\coloneqq \frac{FSR}{\Delta f_{1/2}}
+\end{align}
+where $\Delta f_{1/2}$ is full-width half-maximum (FWHM) of transmitted and internal intensities.
 
 \printbibliography
 
