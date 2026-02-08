@@ -279,7 +279,7 @@ We obtain an expression for the transmitted field:
 \begin{align}
     E_t = E_0 \frac{t_1^* t t_2 e^{-ikL}}{1 - t^2 r_1 r_2 e^{-2ikL}} \label{eq:E_t}
 \end{align}
-After some algebra we get an expression for transmitted intensity ($\tilde{f} = \frac{f}{FSR}$):
+After some algebra we get an expression for transmitted intensity ($\tilde{f} = f/FSR$):
 \begin{align}
     I_t &= I_0 \frac{|t_1|^2 |t_2|^2 t^2}{1 + (t^2 r_1 r_2)^2 - 2 t^2 r_1 r_2 \cos (2 \pi \tilde{f})}
 \end{align}
@@ -299,13 +299,17 @@ We obtain:
 \begin{align}
     E_c^+(x) = E_0 \frac{t_1^* t_a e^{-ikx}}{1-t^2 r_1 r_2 e^{-2ikL}} \label{eq:E_c_f}
 \end{align}
+The forward propagating intensity is:
+\begin{align}
+    I_c^+ &= I_0 \frac{|t_1|^2 t_a^2}{1 + (t^2 r_1 r_2)^2 - 2 t^2 r_1 r_2 \cos (2 \pi \tilde{f})}
+\end{align}
 For the backward field:
 \begin{align*}
     E_c^-(x) &= E_0 (t_1^* t_a t_b r_2 t_b e^{-ik(2L-x)} + t_1^* t_a t_b r_2 t_b t_a r_1 t_a t_b r_2 t_b e^{-ik(4L-x)} + ...) = \\
     &= E_0 t_1^* t r_2 t_b e^{-ik(2L-x)} (1 + t^2 r_1 r_2 e^{-2ikL} + (t^2 r_1 r_2 e^{-2ikL})^2 + ...) = \\
     &= E_0 \frac{t_1^* t r_2 t_b e^{-ik(2L-x)}}{1-t^2 r_1 r_2 e^{-2ikL}}
 \end{align*}
-It's here that we have to shamefully acknowledge that the amplitude reflection coefficients are actually negative, because upon reflection from a medium with higher refractive index the light undergoes a $\pi$ phase shift. So if we take this into account we obtain:
+It's here that we have to acknowledge that the amplitude reflection coefficients are actually negative, because upon reflection from a medium with higher refractive index the light undergoes a $\pi$ phase shift. So if we take this into account we obtain:
 \begin{align}
     E_c^-(x) = E_0 \frac{-t_1^* t |r_2| t_b e^{-ik(2L-x)}}{1-t^2 r_1 r_2 e^{-2ikL}}
 \end{align}
@@ -317,21 +321,40 @@ We obtain:
 \begin{align}
     E_c(x) = E_0  \frac{t_1^* (t_a e^{ik(L-x)} - t t_b |r_2| e^{-ik(L-x)})e^{-ikL}}{1-t^2 r_1 r_2 e^{-2ikL}}
 \end{align}
-After some algebra we get an expression for intracavity intensity ($\tilde{f} = \frac{f}{FSR}$, $\tilde{x} = \frac{x}{L}$):
+After some algebra we get an expression for intracavity intensity ($\tilde{f} = f / FSR$, $\tilde{x} = x / L$):
 \begin{align}
     I_c(\tilde{x}) &= I_0 \frac{|t_1|^2(t_a^2 + t^2 t_b^2 r_2^2 - 2 t^2 |r_2| \cos (2 \pi \tilde{f} (\tilde{x} - 1)))}{1 + (t^2 r_1 r_2)^2 - 2 t^2 r_1 r_2 \cos (2 \pi \tilde{f})}
 \end{align}
-The maximum internal intensity is obtained on resonance (when $\tilde{f} \in \mathbb{N}$):
+The maximum internal intensity is obtained on resonance (when $\tilde{x} = m/\tilde{f}, ~~ \tilde{f}, m \in \mathbb{N}$):
 \begin{align}
-    I_c^{res} &= I_0 \frac{|t_1|^2 (t_a + t t_b |r_2|)^2}{(1 - t^2 r_1 r_2)^2}
+    I_c^{res} &= I_0 \frac{4|t_1|^2 }{(1 - t^2 r_1 r_2)^2}
 \end{align}
 
-\section{Finesse}
+\section{Finesse and impedance mismatch}
 Parameter of the cavity, characterizing the "goodness" of the cavity is called $\textit{finesse}$ ($\mathcal{F}$). It's defined as follows:
 \begin{align}
-    \mathcal{F} &\coloneqq \frac{FSR}{\Delta f_{1/2}}
+    \mathcal{F} &\coloneqq \frac{FSR}{\gamma}
 \end{align}
-where $\Delta f_{1/2}$ is full-width half-maximum (FWHM) of transmitted and internal intensities.
+where $\gamma$ is full-width at half-maximum (FWHM) of transmitted or internal intensities. 
+If we now equate 
+\begin{align}
+    I_t(\tilde{f}_{1/2}) &= \frac{I_t^{res}}{2} 
+\end{align}
+After some algebra and series expansions (since $1-t^2 r_1 r_2 \ll 1$) we get:
+\begin{align}
+    \tilde{f}_{1/2} &= \frac{1-t^2 r_1 r_2}{2 \pi} = \frac{\gamma}{2 FSR}\\
+    \mathcal{F} &= \frac{\pi}{1-t^2 r_1 r_2}
+\end{align}
+Finesse is also related to the intensity enhancement inside of the cavity:
+\begin{align}
+    \frac{I_c^{res}}{I_0} &= \frac{4 \mathcal{F}}{\pi} \frac{1-r_1^2}{1-t^2 r_1 r_2} \label{eq:enh}
+\end{align}
+In a lossless and symmetric ($r_1 = r_2,~t=0$) case it simply yields:
+\begin{align}
+    \frac{I_c^{res}}{I_0} &= \frac{4 \mathcal{F}}{\pi} \label{eq:enh_ideal}
+\end{align}
+Please take into account that "lossless and symmetric ($r_1 = r_2,~t=0$) case" is never actually achievable in real life, and the results \ref{eq:enh_ideal} for ideal case and \ref{eq:enh} for a real case vary \textbf{significantly}, sometimes \textbf{by several orders of magnitude}. So let's elaborate on how to evaluate useful quantities for a real-life cavity.
+
 
 \printbibliography
 
