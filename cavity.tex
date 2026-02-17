@@ -261,14 +261,14 @@ Let's remember that
 \end{align}
 where $\tilde{f} = \frac{f}{FSR}$ is a normalized frequency. After some algebra we get an expression for reflected intensity:
 \begin{align}
-    I_r &= I_0 \frac{r_1^2 + t^4 r_2^2 - 2t^2 r_1 r_2 \cos (2 \pi \tilde{f})}{1 + (t^2 r_1 r_2)^2 - 2 t^2 r_1 r_2 \cos (2 \pi \tilde{f})}
+    I_r &= I_0 \frac{(r_1 - t^2 r_2)^2 + 4t^2 r_1 r_2 \sin^2 (\pi \tilde{f})}{(1-t^2 r_1 r_2)^2 + 4 t^2 r_1 r_2 \sin^2 (\pi \tilde{f})}
 \end{align}
 The minimum reflected intensity is obtained on resonance (when $\tilde{f} \in \mathbb{N}$):
 \begin{align}
     I_r^{res} &= I_0 \frac{(r_1 - t^2 r_2)^2}{(1 - t^2 r_1 r_2)^2}
 \end{align}
 
-\subsection{Transmitted field}
+\subsection{Transmitted field and intensity}
 If the incident amplitude of the field is $E_0$, by summing all the paths that contribute to the transmitted field and using \ref{eq:r_prime}, \ref{eq:t_prime} we arrive to the following series (we relabel $t = t_a t_b$)
 \begin{align*}
     E_t &= E_0 ( t_1^* t t_2 e^{-ikL} + t^*_1 t r_2 t r_1 t t_2 e^{-3ikL} + ...) = \\
@@ -281,14 +281,14 @@ We obtain an expression for the transmitted field:
 \end{align}
 After some algebra we get an expression for transmitted intensity ($\tilde{f} = f/FSR$):
 \begin{align}
-    I_t &= I_0 \frac{|t_1|^2 |t_2|^2 t^2}{1 + (t^2 r_1 r_2)^2 - 2 t^2 r_1 r_2 \cos (2 \pi \tilde{f})}
+    I_t &= I_0 \frac{|t_1|^2 |t_2|^2 t^2}{(1-t^2 r_1 r_2)^2 + 4 t^2 r_1 r_2 \sin^2 (\pi \tilde{f})}
 \end{align}
 The maximum transmitted intensity is obtained on resonance (when $\tilde{f} \in \mathbb{N}$):
 \begin{align}
     I_t^{res} &= I_0 \frac{|t_1|^2 |t_2|^2 t^2}{(1 - t^2 r_1 r_2)^2}
 \end{align}
 
-\subsection{Intracavity field}
+\subsection{Intracavity field and intensity}
 We need to calculate fields propagating in the direction of incident light ($E_c^+(x)$), in the opposite direction ($E_c^-(x)$) and full intracavity field ($E_c(x)$). The process of calculation is very similar to the reflected and transmitted fields calculations, but this time we have to take care of at which point in the cavity the field is being calculated. Let's pick a point at a distance $x$ from the first mirror and calculate forward and backward fields there. For the forward field:
 \begin{align*}
     E_c^+(x) &= E_0 (t_1^* t_a e^{-ikx} + t_1^* t_a t_b r_2 t_b t_a r_1 t_a e^{-ikx} e^{-2ikL} + ...) = \\
@@ -301,7 +301,7 @@ We obtain:
 \end{align}
 The forward propagating intensity is:
 \begin{align}
-    I_c^+ &= I_0 \frac{|t_1|^2 t_a^2}{1 + (t^2 r_1 r_2)^2 - 2 t^2 r_1 r_2 \cos (2 \pi \tilde{f})}
+    I_c^+ &= I_0 \frac{|t_1|^2 t_a^2}{(1-t^2 r_1 r_2)^2 + 4 t^2 r_1 r_2 \sin^2 (\pi \tilde{f})}
 \end{align}
 For the backward field:
 \begin{align*}
@@ -323,7 +323,7 @@ We obtain:
 \end{align}
 After some algebra we get an expression for intracavity intensity ($\tilde{f} = f / FSR$, $\tilde{x} = x / L$):
 \begin{align}
-    I_c(\tilde{x}) &= I_0 \frac{|t_1|^2(t_a^2 + t^2 t_b^2 r_2^2 - 2 t^2 |r_2| \cos (2 \pi \tilde{f} (\tilde{x} - 1)))}{1 + (t^2 r_1 r_2)^2 - 2 t^2 r_1 r_2 \cos (2 \pi \tilde{f})}
+    I_c(\tilde{x}) &= I_0 \frac{|t_1|^2((t_a - t t_b r_2)^2 + 4 t^2 |r_2| \sin^2 (\pi \tilde{f} (\tilde{x} - 1)))}{(1-t^2 r_1 r_2)^2 + 4 t^2 r_1 r_2 \sin^2 (\pi \tilde{f})}
 \end{align}
 The maximum internal intensity is obtained on resonance (when $\tilde{x} = m/\tilde{f}, ~~ \tilde{f}, m \in \mathbb{N}$):
 \begin{align}
