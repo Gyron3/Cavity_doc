@@ -321,17 +321,17 @@ We obtain:
 \begin{align}
     E_c(x) = E_0  \frac{t_1^* (t_a e^{ik(L-x)} - t t_b |r_2| e^{-ik(L-x)})e^{-ikL}}{1-t^2 r_1 r_2 e^{-2ikL}}
 \end{align}
-After some algebra we get an expression for intracavity intensity ($\tilde{f} = f / FSR$, $\tilde{x} = x / L$):
+After some algebra we get an expression for intracavity intensity ($\tilde{f} = f / FSR$, $\tilde{x} = 2 x / \lambda$):
 \begin{align}
-    I_c(\tilde{x}) &= I_0 \frac{|t_1|^2((t_a - t t_b r_2)^2 + 4 t^2 |r_2| \sin^2 (\pi \tilde{f} (\tilde{x} - 1)))}{(1-t^2 r_1 r_2)^2 + 4 t^2 r_1 r_2 \sin^2 (\pi \tilde{f})}
+    I_c(\tilde{x}) &= I_0 \frac{|t_1|^2((t_a + t t_b |r_2|)^2 - 4 t^2 |r_2| \cos^2 (\pi (\tilde{x} -  \tilde{f})))}{(1-t^2 r_1 r_2)^2 + 4 t^2 r_1 r_2 \sin^2 (\pi \tilde{f})}
 \end{align}
-The maximum internal intensity is obtained on resonance (when $\tilde{x} = m/\tilde{f}, ~~ \tilde{f}, m \in \mathbb{N}$):
+The maximum internal intensity is obtained on resonance (when $\tilde{x} = m+1/2, ~~ \tilde{f}, m \in \mathbb{N}$):
 \begin{align}
-    I_c^{{res, max}} &= I_0 \frac{4|t_1|^2 }{(1 - t^2 r_1 r_2)^2} \\
+    I_c^{{res, max}} &= I_0 \frac{|t_1|^2 (t_a + t t_b |r_2|)^2}{(1 - t^2 r_1 r_2)^2} \approx I_0 \frac{4 |t_1|^2}{(1 - t^2 r_1 r_2)^2}
 \end{align}
 The propagating internal intensity on resonance:
 \begin{align}
-        I_c^{{res, +}} &= I_0 \frac{|t_1|^2 }{(1 - t^2 r_1 r_2)^2}
+        I_c^{{res, +}} &= I_0 \frac{|t_1|^2 t_a^2}{(1 - t^2 r_1 r_2)^2} \approx I_0 \frac{|t_1|^2}{(1 - t^2 r_1 r_2)^2}
 \end{align}
 
 \section{Measuring cavity parameters}
