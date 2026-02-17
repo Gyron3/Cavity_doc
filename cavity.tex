@@ -334,7 +334,7 @@ The propagating internal intensity on resonance:
         I_c^{{res, +}} &= I_0 \frac{|t_1|^2 }{(1 - t^2 r_1 r_2)^2}
 \end{align}
 
-\section{Finesse}
+\section{Measuring cavity parameters}
 Parameter of the cavity, characterizing the "goodness" of the cavity is called $\textit{finesse}$ ($\mathcal{F}$). It's defined as follows:
 \begin{align}
     \mathcal{F} &\coloneqq \frac{FSR}{\gamma}
@@ -375,6 +375,24 @@ it becomes possible to make series expansions of all the quantities derived abov
 $A_{loss}$ here is a single-pass loss coefficient. If we want to calculate the overall steady-state loss coefficient its given by a trivial expression (which is consistent with the equations above):
 \begin{align}
     A_{loss}^{full} &= 1 - R_c - T_c
+\end{align}
+
+Usually, depending on how well-aligned the beam is to the cavity mode, the focusing parameters of the beam, the quality of collimating lens, there is a coupling efficiency that represents the proportion of the beam intensity, coupling into the desired mode of the cavity (usually $\text{TE}_{00}$). 
+\begin{align}
+    \eta &= \frac{I_{00}}{I_0}, ~ I_0 = I_{00} + I_h
+\end{align}
+
+The rest of the intensity ($1 - \eta$ part) is partly decomposed into high-order Hermite-Gaussian modes, and partly plainly reflected from the mirror, because they cannot be decomposed into the high-order modes. The statement, that an arbitrary beam can be decomposed into HG modes is only true for the beams of the same pointing (propagating along the same axis), so if we have a beam thats misaligned with the cavity axis, there will inevitably be a part of the beam that can't be decomposed into HG modes.
+
+Taking into account the coupling efficiency $\eta$ we can express apparent reflectance and transmittance of the cavity through the actual ones ($R_c = I_r^{cav}/I_{00}, ~R_c^{app} = I_r^{full}/I_{0}, ~T_c = I_t^{cav}/I_{00}, ~T_c^{app} = I_t^{full}/I_{0}$):
+\begin{align}
+    R_c^{app} &= \eta R_c + 1 - \eta \\
+    T_c^{app} &= \eta T_c
+\end{align}
+And reverse:
+\begin{align}
+    R_c &= \frac{1}{\eta} R_c^{app} - 1 + \eta \\
+    T_c &= \frac{1}{\eta} T_c^{app}
 \end{align}
 
 
