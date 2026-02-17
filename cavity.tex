@@ -327,7 +327,11 @@ After some algebra we get an expression for intracavity intensity ($\tilde{f} = 
 \end{align}
 The maximum internal intensity is obtained on resonance (when $\tilde{x} = m/\tilde{f}, ~~ \tilde{f}, m \in \mathbb{N}$):
 \begin{align}
-    I_c^{res} &= I_0 \frac{4|t_1|^2 }{(1 - t^2 r_1 r_2)^2}
+    I_c^{{res, max}} &= I_0 \frac{4|t_1|^2 }{(1 - t^2 r_1 r_2)^2} \\
+\end{align}
+The propagating internal intensity on resonance:
+\begin{align}
+        I_c^{{res, +}} &= I_0 \frac{|t_1|^2 }{(1 - t^2 r_1 r_2)^2}
 \end{align}
 
 \section{Finesse}
@@ -355,7 +359,13 @@ In a lossless and symmetric ($r_1 = r_2,~t=0$) case it simply yields:
 \end{align}
 Please take into account that "lossless and symmetric ($r_1 = r_2,~t=0$) case" is never actually achievable in real life, and the results \ref{eq:enh_ideal} for ideal case and \ref{eq:enh} for a real case vary \textbf{significantly}, sometimes \textbf{by several orders of magnitude}.
 
-It turns out that if one experimentally measures finesse, reflected intensity on resonance and transmitted intensity on resonance, intracavity intensity, mirror parameters and cavity losses can be derived from these three parameters with simple expressions:
+If one represents $|t|, |r_1|, |r_2|$ as follows:
+\begin{align}
+    |r_1| &= 1 - a , ~ a \ll 1\\
+    |r_2| &= 1- b  , ~ b \ll 1\\
+    |t| &= 1-c , ~ c \ll 1
+\end{align}
+it becomes possible to make series expansions of all the quantities derived above. After some algebra it turns out that if one experimentally measures finesse, reflected intensity on resonance and transmitted intensity on resonance, intracavity intensity, mirror parameters and cavity losses can be derived from these three parameters with simple expressions:
 \begin{align}
     \frac{I_c^{res}}{I_0} &= \frac{4 \mathcal{F}}{\pi} (1 - \sqrt{R_c}) \\
     R_1 &= 1- \pi \frac{1 - \sqrt{R_c}}{\mathcal{F}} \\
@@ -366,6 +376,8 @@ $A_{loss}$ here is a single-pass loss coefficient. If we want to calculate the o
 \begin{align}
     A_{loss}^{full} &= 1 - R_c - T_c
 \end{align}
+
+
 \printbibliography
 
 \end{document}
