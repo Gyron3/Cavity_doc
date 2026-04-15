@@ -1,6 +1,6 @@
-PWD c:\Users\agurchen\Desktop\repos\Cavity_doc
+PWD c:\Users\agurchen\Desktop\git_repos\Cavity_doc
 INPUT C:\Users\agurchen\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\agurchen\Desktop\repos\Cavity_doc\cavity.tex
+INPUT c:\Users\agurchen\Desktop\git_repos\Cavity_doc\cavity.tex
 OUTPUT cavity.log
 INPUT C:\Users\agurchen\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\agurchen\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
