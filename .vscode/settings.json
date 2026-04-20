@@ -1,6 +1,8 @@
 {
-  "files.autoSave": "afterDelay",
+  "files.autoSave": "off",
   "editor.wordWrap": "on",
+  "latex-workshop.synctex.afterBuild.enabled": true,
+  "latex-workshop.view.pdf.internal.keepPosition": true,
   "latex-workshop.latex.autoBuild.run": "onFileChange",
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.latex.clean.enabled": true,

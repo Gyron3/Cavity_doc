@@ -414,6 +414,46 @@ And reverse:
 
 \subsection{Atom-light interaction}
 
+\begin{wrapfigure}{r}{0.4\textwidth}
+    \centering
+
+        \begin{tikzpicture}[>=stealth,thick]
+
+        % --- System A ---
+        % levels
+        \draw (-2,2) -- (0,2);
+        \draw (-2,0) -- (0,0);
+
+        % labels
+        \node[left] at (-2,2) {$|e_A\rangle$};
+        \node[left] at (-2,0) {$|g_A\rangle$};
+
+        % transition arrow
+        \draw[<->] (-1,0) -- (-1,2) node[midway,right] {$\omega_A$};
+
+        % --- System B ---
+        % levels
+        \draw (2,2) -- (4,2);
+        \draw (2,-0.5) -- (4,-0.5);
+
+        % labels
+        \node[right] at (4,2) {$|e_B\rangle$};
+        \node[right] at (4,-0.5) {$|g_B\rangle$};
+
+        % transition arrow
+        \draw[<->] (3,-0.5) -- (3,2) node[midway,left] {$\omega_B$};
+
+        \draw[dashed] (0,2) -- (2,2);
+        % \draw[dashed] (-2,-0.25) -- (4,-0.25);
+
+        \end{tikzpicture}
+
+    \caption{Level diagram}
+    \label{levels1}
+\end{wrapfigure}
+
+The most physically accurate way do describe atom-light interaction for a $^{87}$Rb ensemble driven with $\pi$-polarized light is to treat a Rubidium atom as two not interacting two-level systems \ref{levels1}. In case of D2 line of $^{87}$Rb $|g_A\rangle = |5 ^2 S_{1/2}, F = 2, m_F = 0 \rangle = |\uparrow \rangle$ , $|g_B\rangle = |5 ^2 S_{1/2}, F = 1, m_F = 0 \rangle = |\downarrow \rangle$, $|e_A\rangle = |5 ^2 S_{3/2}, F = \{1,3\}, m_F = 0 \rangle$, $|e_B\rangle = |5 ^2 S_{3/2}, F = \{0,2\}, m_F = 0 \rangle$
+
 \subsubsection{Effective Hamiltonian}
 
 \subsubsection{One-axis twisting}
