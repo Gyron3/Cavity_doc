@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.7)  15 APR 2026 10:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.10)  20 APR 2026 14:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**c:/Users/agurchen/Desktop/git_repos/Cavity_doc/cavity.tex
-(c:/Users/agurchen/Desktop/git_repos/Cavity_doc/cavity.tex
+**c:/Users/agurchen/Desktop/repos/Cavity_doc/cavity.tex
+(c:/Users/agurchen/Desktop/repos/Cavity_doc/cavity.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
 (C:\Users\agurchen\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -991,31 +991,35 @@ Package biblatex Info: ... file 'cavity.bbl' found.
  (cavity.bbl)
 Package biblatex Info: Reference section=0 on input line 21.
 Package biblatex Info: Reference segment=0 on input line 21.
+ (cavity.toc)
+\tf@toc=\write6
+\openout6 = `cavity.toc'.
+
  [1
 
-{C:/Users/agurchen/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4] [5] [6] (cavity.aux)
+{C:/Users/agurchen/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4] [5] [6] [7] (cavity.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `cavity.out' has not changed.
-(rerunfilecheck)             Checksum: 18A7ACC4E353BC134E84E6B50352E33B;1587.
+(rerunfilecheck)             Checksum: FE23AD72F6D5928AE19D9001B81154CE;4424.
 Package logreq Info: Writing requests to 'cavity.run.xml'.
 \openout1 = `cavity.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35526 strings out of 467871
- 704810 string characters out of 5416925
- 1642242 words of memory out of 5000000
- 63770 multiletter control sequences out of 15000+600000
+ 35567 strings out of 467871
+ 705517 string characters out of 5416924
+ 1643251 words of memory out of 5000000
+ 63790 multiletter control sequences out of 15000+600000
  642321 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,10n,118p,2004b,1511s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,10n,118p,2000b,1585s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on cavity.pdf (6 pages, 247608 bytes).
+Output written on cavity.pdf (7 pages, 268041 bytes).
 PDF statistics:
- 230 PDF objects out of 1000 (max. 8388607)
- 63 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 328 PDF objects out of 1000 (max. 8388607)
+ 81 named destinations out of 1000 (max. 500000)
+ 201 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -11,9 +11,9 @@
 \setlength{\textwidth}{450pt}
 \setlength{\textheight}{660pt}
 
-\title{Basic theory of a standing wave optical cavity in vacuum}
+\title{Hybrid experiment theoretical essentials}
 
-\date{February 2026}
+\date{April 2026}
 
 \author{Alexei Gurchenko}
 
@@ -22,9 +22,13 @@
 
 \maketitle
 
+\tableofcontents
 
+\newpage
 
-\section{Reflection and transmission at an interface}
+\section{Standing wave optical cavity in vacuum}
+
+\subsection{Reflection and transmission at an interface}
 
 \begin{figure}[H]
     \centering
@@ -160,7 +164,7 @@ So finally we have
 
 
 
-\section{Reflected, transmitted and intracavity fields and intensities}
+\subsection{Reflected, transmitted and intracavity fields and intensities}
 
 Let us start calculating the reflected, transmitted and intracavity fields. Figure \ref{fig:cavity} depicts the schematic of the electromagnetic wave traveling inside the optical cavity. We assume that the mirrors $1$ and $2$ have corresponding amplitude transmission and reflection coefficients $r_1$, $t_1$ and $r_2$, $t_2$. The intracavity medium is lossless, however there is a loss of amplitude due to scattering at the mirror surfaces: $t_a$ at Mirror $1$ and $t_b$ at Mirror $2$ ($t = t_a t_b$). This model is the closest approximation of a two-mirror cavity inside ultra-high vacuum environment.
 
@@ -243,7 +247,7 @@ Let us start calculating the reflected, transmitted and intracavity fields. Figu
     \label{fig:cavity}
 \end{figure}
 
-\subsection{Reflected field and intensity}
+\subsubsection{Reflected field and intensity}
 If the incident amplitude of the field is $E_0$, by summing all the paths that contribute to the reflected field and using \ref{eq:r_prime}, \ref{eq:t_prime} we arrive to the following series (we relabel $t = t_a t_b$)
 \begin{align*}
     E_r &= E_0 ( -r_1 + t^*_1 t r_2 t t_1 e^{-2ikL} + t^*_1 t r_2 t r_1 t r_2 t t_1 e^{-4ikL} + ...) = \\
@@ -268,7 +272,7 @@ The minimum reflected intensity is obtained on resonance (when $\tilde{f} \in \m
     I_r^{res} &= I_0 \frac{(r_1 - t^2 r_2)^2}{(1 - t^2 r_1 r_2)^2}
 \end{align}
 
-\subsection{Transmitted field and intensity}
+\subsubsection{Transmitted field and intensity}
 If the incident amplitude of the field is $E_0$, by summing all the paths that contribute to the transmitted field and using \ref{eq:r_prime}, \ref{eq:t_prime} we arrive to the following series (we relabel $t = t_a t_b$)
 \begin{align*}
     E_t &= E_0 ( t_1^* t t_2 e^{-ikL} + t^*_1 t r_2 t r_1 t t_2 e^{-3ikL} + ...) = \\
@@ -288,7 +292,7 @@ The maximum transmitted intensity is obtained on resonance (when $\tilde{f} \in 
     I_t^{res} &= I_0 \frac{|t_1|^2 |t_2|^2 t^2}{(1 - t^2 r_1 r_2)^2}
 \end{align}
 
-\subsection{Intracavity field and intensity}
+\subsubsection{Intracavity field and intensity}
 We need to calculate fields propagating in the direction of incident light ($E_c^+(x)$), in the opposite direction ($E_c^-(x)$) and full intracavity field ($E_c(x)$). The process of calculation is very similar to the reflected and transmitted fields calculations, but this time we have to take care of at which point in the cavity the field is being calculated. Let's pick a point at a distance $x$ from the first mirror and calculate forward and backward fields there. For the forward field:
 \begin{align*}
     E_c^+(x) &= E_0 (t_1^* t_a e^{-ikx} + t_1^* t_a t_b r_2 t_b t_a r_1 t_a e^{-ikx} e^{-2ikL} + ...) = \\
@@ -334,7 +338,7 @@ The propagating internal intensity on resonance:
         I_c^{{res, +}} &= I_0 \frac{|t_1|^2 t_a^2}{(1 - t^2 r_1 r_2)^2} \approx I_0 \frac{|t_1|^2}{(1 - t^2 r_1 r_2)^2}
 \end{align}
 
-\section{Measuring cavity parameters}
+\subsection{Measuring cavity parameters}
 Parameter of the cavity, characterizing the "goodness" of the cavity is called $\textit{finesse}$ ($\mathcal{F}$). It's defined as follows:
 \begin{align}
     \mathcal{F} &\coloneqq \frac{FSR}{\gamma}
@@ -377,7 +381,7 @@ $A_{loss}$ here is a single-pass loss coefficient. If we want to calculate the o
     A_{loss}^{full} &= 1 - R_c - T_c
 \end{align}
 
-\section{Mode matching}
+\subsection{Mode matching}
 
 Usually, depending on how well-aligned the beam is to the cavity mode, the focusing parameters of the beam, the quality of collimating lens, there is a coupling efficiency that represents the proportion of the beam intensity, coupling into the desired mode of the cavity (usually $\text{TE}_{00}$). 
 \begin{align}
@@ -396,6 +400,38 @@ And reverse:
     R_c &= \frac{1}{\eta} (R_c^{app} - 1 + \eta) \\
     T_c &= \frac{1}{\eta} T_c^{app}
 \end{align}
+
+
+\section{Cold atoms and atom-light interaction}
+
+\subsection{Energy levels}
+
+\subsection{Atoms cooling and trapping}
+
+\subsubsection{Magneto-optical trap}
+
+\subsubsection{Optical molasses}
+
+\subsection{Atom-light interaction}
+
+\subsubsection{Effective Hamiltonian}
+
+\subsubsection{One-axis twisting}
+
+\section{Optomechanics}
+
+\subsection{Cavity optomechanics}
+
+\subsubsection{Linearized Hamiltonian}
+
+\subsubsection{Optical spring}
+
+\subsubsection{Sideband cooling}
+
+\subsection{Zigzag cavity}
+
+
+\section{Hybrid system description and dynamics}
 
 
 \printbibliography
