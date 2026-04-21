@@ -47,6 +47,31 @@
       \verb 10.1093/acprof:oso/9780199665488.001.0001
       \endverb
     \endentry
+    \entry{Steck2003}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=cd77a48f4316b3bd45ca5c381e90e4b1}{%
+           family={Steck},
+           familyi={S\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{cd77a48f4316b3bd45ca5c381e90e4b1}
+      \strng{fullhash}{cd77a48f4316b3bd45ca5c381e90e4b1}
+      \strng{fullhashraw}{cd77a48f4316b3bd45ca5c381e90e4b1}
+      \strng{bibnamehash}{cd77a48f4316b3bd45ca5c381e90e4b1}
+      \strng{authorbibnamehash}{cd77a48f4316b3bd45ca5c381e90e4b1}
+      \strng{authornamehash}{cd77a48f4316b3bd45ca5c381e90e4b1}
+      \strng{authorfullhash}{cd77a48f4316b3bd45ca5c381e90e4b1}
+      \strng{authorfullhashraw}{cd77a48f4316b3bd45ca5c381e90e4b1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This is revision 2.2.2, 9 July 2021. Cite this document as: Daniel A. Steck, ''Rubidium 87 D Line Data,'' available online at http://steck.us/alkalidata (revision 2.2.2, 9 July 2021).}
+      \field{journaltitle}{Source–http://steck. us/alkalidata}
+      \field{title}{Rubidium 87 d line data, revision 1.6}
+      \field{year}{2003}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

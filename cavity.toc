@@ -11,13 +11,13 @@
 \contentsline {subsection}{\numberline {2.2}Atoms cooling and trapping}{7}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Magneto-optical trap}{7}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Optical molasses}{7}{subsubsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.3}Atom-light interaction}{7}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Effective Hamiltonian}{7}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}One-axis twisting}{7}{subsubsection.2.3.2}%
-\contentsline {section}{\numberline {3}Optomechanics}{7}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Cavity optomechanics}{7}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Linearized Hamiltonian}{7}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Optical spring}{7}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}Sideband cooling}{7}{subsubsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.2}Zigzag cavity}{7}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Hybrid system description and dynamics}{7}{section.4}%
+\contentsline {subsection}{\numberline {2.3}Atom-light interaction}{9}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Effective Hamiltonian}{9}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}One-axis twisting}{9}{subsubsection.2.3.2}%
+\contentsline {section}{\numberline {3}Optomechanics}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Cavity optomechanics}{9}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Linearized Hamiltonian}{9}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Optical spring}{9}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Sideband cooling}{9}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Zigzag cavity}{9}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Hybrid system description and dynamics}{9}{section.4}%
