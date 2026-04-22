@@ -72,6 +72,32 @@
       \field{title}{Rubidium 87 d line data, revision 1.6}
       \field{year}{2003}
     \endentry
+    \entry{Foot2005}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=af294c7a976ab05e62b737bd2eb260c8}{%
+           family={Foot},
+           familyi={F\bibinitperiod},
+           given={C.J.},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{af294c7a976ab05e62b737bd2eb260c8}
+      \strng{fullhash}{af294c7a976ab05e62b737bd2eb260c8}
+      \strng{fullhashraw}{af294c7a976ab05e62b737bd2eb260c8}
+      \strng{bibnamehash}{af294c7a976ab05e62b737bd2eb260c8}
+      \strng{authorbibnamehash}{af294c7a976ab05e62b737bd2eb260c8}
+      \strng{authornamehash}{af294c7a976ab05e62b737bd2eb260c8}
+      \strng{authorfullhash}{af294c7a976ab05e62b737bd2eb260c8}
+      \strng{authorfullhashraw}{af294c7a976ab05e62b737bd2eb260c8}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This text will thoroughly update the existing literature on atomic physics. Intended to accompany an advanced undergraduate course in atomic physics, the book will lead the students up to the latest advances and the applications to Bose-Einstein Condensation of atoms, matter-waveinter-ferometry and quantum computing with trapped ions. The elementary atomic physics covered in the early chapters should be accessible to undergraduates when they are first introduced to the subject. To complement the usual quantum mechanical treatment of atomic structure the book stronglyemphasizes the experimental basis of the subject, especially in the later chapters. It includes ample tutorial material (examples, illustrations, chapter summaries, graded problem sets).}
+      \field{journaltitle}{Citeulike.Org}
+      \field{title}{Atomic Physics (Oxford Master Series in Atomic, Optical and Laser Physics)}
+      \field{volume}{11}
+      \field{year}{2005}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
