@@ -406,20 +406,28 @@ And reverse:
 
 \section{Cold atoms and atom-light interaction}
 
-\subsection{Energy levels}
+\subsection{Energy levels} 
+\label{sec_energy_levels}
 
-\begin{figure}
+\begin{figure}[h]
     \begin{center}
-        \includegraphics[width = 1\textwidth]{figures/rb_levels.pdf}
+        \includegraphics[width = 0.8\textwidth]{figures/rb_levels.pdf}
     \end{center}
     \caption{$^{87}$Rb level diagram \cite{Steck2003}}
     \label{rb_levels}
 \end{figure}
 
-The experiment that will be described here will work with $^{87}$Rb atoms. Specifically with the D2 line of $^{87}$Rb (Fig. \ref{rb_levels}). We are mostly interested in addressing the hyperfine ground states $|g_\uparrow\rangle = |5 ^2 S_{1/2}, F = 2, m_F = 0 \rangle = |\uparrow \rangle$ and $|g_\downarrow\rangle = |5 ^2 S_{1/2}, F = 1, m_F = 0 \rangle = |\downarrow \rangle$ (so-called Rb clock states). The selection rules for electric dipole (E1) transitions say that if $\Delta L = 0$ the transition is forbidden \cite{Foot2005}. The $|\uparrow \rangle$ and $|\downarrow \rangle$ states have the same angular momentum number $L = 1$, hence the E1 transition between them is forbidden. It is not forbidden for the magnetic dipole (M1) transitions to happen between these two levels. That's why it is possible to drive this transition with a microwave antenna. Since there is a manifold of excited states $5^2P_{3/2}$ separated by an optical frequency ($\lambda$ = 780 nm) from the ground $5^2S_{1/2}$ states, the system can be driven into these excited states via a laser. From now on the hyperfine levels of $5^2S_{1/2}$ will be referred to as $F = 1,2$ and hyperfine levels of $5^2P_{3/2}$ will be referred to as $F' = 0,1,2,3$. Each of the $F$ and $F'$ levels have a Zeeman manifold which splits the level into $2F-1$ states. Let's for now only consider magnetically insensitive states with $m_F = 0$. There is a selection rule that says that for E1 transitions with $\Delta F = 0$,  $m_F = 0 \nleftrightarrow 0$, which means that transitions $|F=1,m_F=0 \rangle \nleftrightarrow |F'=1,m_F=0 \rangle$ and $|F=2,m_F=0 \rangle \nleftrightarrow |F'=2,m_F=0 \rangle$ are forbidden.
+
+The experiment that will be described here will work with $^{87}$Rb atoms. Specifically with the D2 line of $^{87}$Rb (Fig. \ref{rb_levels}). We are mostly interested in addressing the hyperfine ground states $|g_\uparrow\rangle = |5 ^2 S_{1/2}, F = 2, m_F = 0 \rangle = |\uparrow \rangle$ and $|g_\downarrow\rangle = |5 ^2 S_{1/2}, F = 1, m_F = 0 \rangle = |\downarrow \rangle$ (so-called Rb clock states). The selection rules for electric dipole (E1) transitions say that if $\Delta L = 0$ the transition is forbidden \cite{Foot2005}. The $\uparrow \rangle$ and $|\downarrow \rangle$ states have the same angular momentum number $L = 1$, hence an E1 transition between them is forbidden. That's the reason why the $|\uparrow \rangle$ state has such a small decay rate ($\Gamma_\uparrow \approx 1$ mHz). It is not forbidden for the magnetic dipole (M1) transitions to happen between these two levels, meaning that it is possible to drive this transition with a microwave antenna. Since there is a manifold of excited states $5^2P_{3/2}$ separated by an optical frequency ($\lambda$ = 780 nm) from the ground $5^2S_{1/2}$ states, the system can be driven into these excited states via a laser. From now on the hyperfine levels of $5^2S_{1/2}$ will be referred to as $F = 1,2$ and hyperfine levels of $5^2P_{3/2}$ will be referred to as $F' = 0,1,2,3$. Each of the $F$ and $F'$ levels have a Zeeman manifold which splits the level into $2F-1$ states. Let's for now only consider magnetically insensitive states with $m_F = 0$, implying that we are only considering transitions driven by $\pi$-polarized light. There is a selection rule \cite{Foot2005} that says that for E1 transitions with $\Delta F = 0$,  $m_F = 0 \nleftrightarrow 0$, which means that transitions $|F=1,m_F=0 \rangle \nleftrightarrow |F'=1,m_F=0 \rangle$ and $|F=2,m_F=0 \rangle \nleftrightarrow |F'=2,m_F=0 \rangle$ are forbidden (effective level diagram as per Fig. \ref{eff_rb_levels}). This means that if an atom is initially in $|\uparrow \rangle$ state it can not get to $|\downarrow \rangle$. There is no real population transfer between $\uparrow$ and $\downarrow$ subsystems, but if the system is prepared in equal population of $|\uparrow \rangle$ and $|\downarrow \rangle$, the cavity interaction can put atoms into the respective excited states and introduce apparent population transfer between $|\uparrow \rangle$ and $|\downarrow \rangle$. 
 
 
-
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width = 0.8\textwidth]{figures/effective_levels_rb.pdf}
+    \end{center}
+    \caption{Effective level diagram}
+    \label{eff_rb_levels}
+\end{figure}
 
 
 \subsection{Atoms cooling and trapping}
@@ -432,7 +440,7 @@ The experiment that will be described here will work with $^{87}$Rb atoms. Speci
 
 \subsection{Atom-light interaction}
 
-\begin{wrapfigure}{r}{0.4\textwidth}
+\begin{wrapfigure}{r}{0.44\textwidth}
     \centering
 
         \begin{tikzpicture}[>=stealth,thick]
@@ -470,7 +478,31 @@ The experiment that will be described here will work with $^{87}$Rb atoms. Speci
     \label{levels1}
 \end{wrapfigure}
 
-The most physically accurate way do describe atom-light interaction for a $^{87}$Rb ensemble driven with $\pi$-polarized light is to treat a Rubidium atom as two not interacting two-level systems \ref{levels1}. In case of D2 line of $^{87}$Rb $|g_A\rangle = |5 ^2 S_{1/2}, F = 2, m_F = 0 \rangle = |\uparrow \rangle$ , $|g_B\rangle = |5 ^2 S_{1/2}, F = 1, m_F = 0 \rangle = |\downarrow \rangle$, $|e_A\rangle = |5 ^2 S_{3/2}, F = \{1,3\}, m_F = 0 \rangle$, $|e_B\rangle = |5 ^2 S_{3/2}, F = \{0,2\}, m_F = 0 \rangle$ \cite{Steck2003}.
+The most physically accurate way do describe atom-light interaction (see Section \ref{sec_energy_levels}) for a $^{87}$Rb ensemble driven with $\pi$-polarized light is to treat a Rubidium atom as two separate two-level systems interacting with a cavity mode (Fig. \ref{levels1}). In case of D2 line of $^{87}$Rb $|g_A\rangle = |5 ^2 S_{1/2}, F = 2, m_F = 0 \rangle = |\uparrow \rangle$ , $|g_B\rangle = |5 ^2 S_{1/2}, F = 1, m_F = 0 \rangle = |\downarrow \rangle$, $|e_A\rangle = |5 ^2 S_{3/2}, F = \{1,3\}, m_F = 0 \rangle$, $|e_B\rangle = |5 ^2 S_{3/2}, F = \{0,2\}, m_F = 0 \rangle$ \cite{Steck2003}. The Hamiltonian of the system with many atoms can be broken down into a non-interacting part $H_0$ and an interacting part $H_\text{int}$. 
+
+\begin{gather}
+    H_0 = \omega_c a^\dagger a + \sum_{\alpha \in A} \omega_A \sigma_z^{A (\alpha)} + \sum_{\alpha \in B} \omega_B \sigma_z^{B (\alpha)} \\
+    H_\text{int} = - \sum_{\alpha \in A,B} \hat{d}^{(\alpha)} \cdot \hat{E}
+\end{gather}
+where $\omega_c$ - cavity mode frequency, $a$ - cavity annihilation operator, $\hat{d}$ - dipole operator, $\hat{E}$ - electric field operator, $\sigma_z = |e \rangle \langle e| - |g \rangle \langle g|$, $\sigma_{+} = |e \rangle \langle g|$, $\sigma_{-} = |g \rangle \langle e|$.
+
+\vspace{1em}
+\noindent Dipole operator for a single atom can be written as 
+\begin{gather}
+    \hat{d} = \sum_{i,j} D_{ij} |i\rangle \langle j| ~~~~~(i,j \in {g_A, g_B, e_A, e_B})
+\end{gather}
+We assume the only E1 allowed transitions are $g_A \leftrightarrow e_A$ and $g_B \leftrightarrow e_B$. Then the expression for the single atom dipole operator simplifies to
+
+\begin{gather}
+    \hat{d} = D_{ge}^A \sigma_{-}^A + D_{eg}^A \sigma_{+}^A + D_{ge}^A \sigma_{-}^B + D_{eg}^B \sigma_{+}^B
+\end{gather}
+
+\vspace{1em}
+\noindent Without loss of generality we can set $\hat{E} = \mathcal{E}_0 (a + a^\dagger)$. Then we obtain expression for the interacting part of the Hamiltonian with many atoms in the following form
+
+\begin{gather}
+    H_\text{int} = \sum_{\alpha \in A} g_A (a + a^\dagger) (\sigma_{+}^{A(\alpha)} + \sigma_{-}^{A(\alpha)}) + \sum_{\alpha \in A} g_A (a + a^\dagger) (\sigma_{+}^{A(\alpha)} + \sigma_{-}^{A(\alpha)}) 
+\end{gather}
 
 \subsubsection{Effective Hamiltonian}
 
