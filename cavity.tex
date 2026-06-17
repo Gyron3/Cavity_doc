@@ -498,11 +498,29 @@ We assume the only E1 allowed transitions are $g_A \leftrightarrow e_A$ and $g_B
 \end{gather}
 
 \vspace{1em}
-\noindent Without loss of generality we can set $\hat{E} = \mathcal{E}_0 (a + a^\dagger)$. Then we obtain expression for the interacting part of the Hamiltonian with many atoms in the following form
+\noindent Without loss of generality we can set $\hat{E} = \mathcal{E}_0 (a + a^\dagger)$. Since dipole operator must be Hermitian $D_{eg} = D_{ge}^{*}$. It turns out that its safe to assume that $D_{eg} \in \mathbb{R}$. Then we obtain expression for the interacting part of the Hamiltonian with many atoms in the following form
 
 \begin{gather}
-    H_\text{int} = \sum_{\alpha \in A} g_A (a + a^\dagger) (\sigma_{+}^{A(\alpha)} + \sigma_{-}^{A(\alpha)}) + \sum_{\alpha \in A} g_A (a + a^\dagger) (\sigma_{+}^{A(\alpha)} + \sigma_{-}^{A(\alpha)}) 
+    H_\text{int} = \sum_{\alpha \in A} g_A (a + a^\dagger) (\sigma_{+}^{A(\alpha)} + \sigma_{-}^{A(\alpha)}) + \sum_{\alpha \in B} g_B (a + a^\dagger) (\sigma_{+}^{B(\alpha)} + \sigma_{-}^{B(\alpha)}) 
 \end{gather}
+
+where $g_A = \mathcal{E}_0 \cdot D_A$, $g_B = \mathcal{E}_0 \cdot D_B$.
+
+\vspace{1em}
+\noindent We can rewrite the Hamiltonian in terms of the collective spin operators 
+\begin{gather}
+    J_{z,+,-}^A = \sum_{\alpha \in A} \sigma_{z,+,-}^{A(\alpha)}~~~~~ \text{and} ~~~~~ J_{z,+,-}^B = \sum_{\alpha \in B} \sigma_{z,+,-}^{B(\alpha)} \\
+    H_0 = \omega_c a^\dagger a + \omega_A J_{z}^A + \omega_B J_{z}^B \\
+    H_\text{int} = g_A (a + a^\dagger) (J_{+}^A + J_{-}^A) +  g_B (a + a^\dagger) (J_{+}^B + J_{-}^B)
+\end{gather}
+
+Now if we go to the interaction picture with a unitary transformation $U = \text{exp}(i t H_0)$, $H_I = U H_\text{int} U^\dagger$, we will see that terms of the new Hamiltonian with $a J_{-}^A, a J_{-}^B$ and $a^\dagger J_{+}^A, a^\dagger J_{+}^B$ will contain fast oscillating exponents with frequencies $2 \omega_c$. We go to the \textit{rotating wave approximation} (RWA), by dropping these terms from the Hamiltonian, and then going out of the interaction picture back to the Schrödinger picture.
+
+\begin{gather}
+    H_0 = \omega_c a^\dagger a + \omega_A J_{z}^A + \omega_B J_{z}^B \\
+    H_\text{RWA} = g_A (a J_{+}^A + a^\dagger J_{-}^A) + g_B (a J_{+}^B + a^\dagger J_{-}^B)
+\end{gather}
+
 
 \subsubsection{Effective Hamiltonian}
 
