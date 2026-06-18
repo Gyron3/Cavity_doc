@@ -440,7 +440,7 @@ The experiment that will be described here will work with $^{87}$Rb atoms. Speci
 
 \subsection{Atom-light interaction}
 
-\begin{wrapfigure}{r}{0.44\textwidth}
+\begin{wrapfigure}[8]{r}{0.44\textwidth}
     \centering
 
         \begin{tikzpicture}[>=stealth,thick]
@@ -478,11 +478,14 @@ The experiment that will be described here will work with $^{87}$Rb atoms. Speci
     \label{levels1}
 \end{wrapfigure}
 
-The most physically accurate way do describe atom-light interaction (see Section \ref{sec_energy_levels}) for a $^{87}$Rb ensemble driven with $\pi$-polarized light is to treat a Rubidium atom as two separate two-level systems interacting with a cavity mode (Fig. \ref{levels1}). In case of D2 line of $^{87}$Rb $|g_A\rangle = |5 ^2 S_{1/2}, F = 2, m_F = 0 \rangle = |\uparrow \rangle$ , $|g_B\rangle = |5 ^2 S_{1/2}, F = 1, m_F = 0 \rangle = |\downarrow \rangle$, $|e_A\rangle = |5 ^2 S_{3/2}, F = \{1,3\}, m_F = 0 \rangle$, $|e_B\rangle = |5 ^2 S_{3/2}, F = \{0,2\}, m_F = 0 \rangle$ \cite{Steck2003}. The Hamiltonian of the system with many atoms can be broken down into a non-interacting part $H_0$ and an interacting part $H_\text{int}$. 
+The most physically accurate way do describe atom-light interaction (see Section \ref{sec_energy_levels}) for a $^{87}$Rb ensemble driven with $\pi$-polarized light is to treat a Rubidium atom as two separate two-level systems interacting with a cavity mode (Fig. \ref{levels1}). In case of D2 line of $^{87}$Rb $|g_A\rangle = |5 ^2 S_{1/2}, F = 2, m_F = 0 \rangle = |\uparrow \rangle$ , $|g_B\rangle = |5 ^2 S_{1/2}, F = 1, m_F = 0 \rangle = |\downarrow \rangle$, $|e_A\rangle = |5 ^2 S_{3/2}, F = \{1,3\}, m_F = 0 \rangle$, $|e_B\rangle = |5 ^2 S_{3/2}, F = \{0,2\}, m_F = 0 \rangle$ \cite{Steck2003}. 
+
+\vspace{5em}
+\noindent The Hamiltonian of the system with many atoms can be broken down into a non-interacting part $H_0$ and an interacting part $H_\text{int}$. 
 
 \begin{gather}
-    H_0 = \omega_c a^\dagger a + \sum_{\alpha \in A} \omega_A \sigma_z^{A (\alpha)} + \sum_{\alpha \in B} \omega_B \sigma_z^{B (\alpha)} \\
-    H_\text{int} = - \sum_{\alpha \in A,B} \hat{d}^{(\alpha)} \cdot \hat{E}
+    H_0 = \omega_c a^\dagger a + \sum_{i \in A} \omega_A \sigma_z^{A (i)} + \sum_{i \in B} \omega_B \sigma_z^{B (i)} \\
+    H_\text{int} = - \sum_{i \in A,B} \hat{d}^{(i)} \cdot \hat{E}
 \end{gather}
 where $\omega_c$ - cavity mode frequency, $a$ - cavity annihilation operator, $\hat{d}$ - dipole operator, $\hat{E}$ - electric field operator, $\sigma_z = |e \rangle \langle e| - |g \rangle \langle g|$, $\sigma_{+} = |e \rangle \langle g|$, $\sigma_{-} = |g \rangle \langle e|$.
 
@@ -491,7 +494,7 @@ where $\omega_c$ - cavity mode frequency, $a$ - cavity annihilation operator, $\
 \begin{gather}
     \hat{d} = \sum_{i,j} D_{ij} |i\rangle \langle j| ~~~~~(i,j \in {g_A, g_B, e_A, e_B})
 \end{gather}
-We assume the only E1 allowed transitions are $g_A \leftrightarrow e_A$ and $g_B \leftrightarrow e_B$. Then the expression for the single atom dipole operator simplifies to
+We assume the only E1 allowed transitions are $|g_A \rangle \leftrightarrow |e_A \rangle$ and $|g_B \rangle \leftrightarrow |e_B \rangle$. Then the expression for the single atom dipole operator simplifies to
 
 \begin{gather}
     \hat{d} = D_{ge}^A \sigma_{-}^A + D_{eg}^A \sigma_{+}^A + D_{ge}^A \sigma_{-}^B + D_{eg}^B \sigma_{+}^B
@@ -501,7 +504,7 @@ We assume the only E1 allowed transitions are $g_A \leftrightarrow e_A$ and $g_B
 \noindent Without loss of generality we can set $\hat{E} = \mathcal{E}_0 (a + a^\dagger)$. Since dipole operator must be Hermitian $D_{eg} = D_{ge}^{*}$. It turns out that its safe to assume that $D_{eg} \in \mathbb{R}$. Then we obtain expression for the interacting part of the Hamiltonian with many atoms in the following form
 
 \begin{gather}
-    H_\text{int} = \sum_{\alpha \in A} g_A (a + a^\dagger) (\sigma_{+}^{A(\alpha)} + \sigma_{-}^{A(\alpha)}) + \sum_{\alpha \in B} g_B (a + a^\dagger) (\sigma_{+}^{B(\alpha)} + \sigma_{-}^{B(\alpha)}) 
+    H_\text{int} = \sum_{i \in A} g_A (a + a^\dagger) (\sigma_{+}^{A(i)} + \sigma_{-}^{A(i)}) + \sum_{i \in B} g_B (a + a^\dagger) (\sigma_{+}^{B(i)} + \sigma_{-}^{B(i)}) 
 \end{gather}
 
 where $g_A = \mathcal{E}_0 \cdot D_A$, $g_B = \mathcal{E}_0 \cdot D_B$.
@@ -509,18 +512,58 @@ where $g_A = \mathcal{E}_0 \cdot D_A$, $g_B = \mathcal{E}_0 \cdot D_B$.
 \vspace{1em}
 \noindent We can rewrite the Hamiltonian in terms of the collective spin operators 
 \begin{gather}
-    J_{z,+,-}^A = \sum_{\alpha \in A} \sigma_{z,+,-}^{A(\alpha)}~~~~~ \text{and} ~~~~~ J_{z,+,-}^B = \sum_{\alpha \in B} \sigma_{z,+,-}^{B(\alpha)} \\
+    J_{z,+,-}^A = \sum_{i \in A} \sigma_{z,+,-}^{A(i)}~~~~~ \text{and} ~~~~~ J_{z,+,-}^B = \sum_{i \in B} \sigma_{z,+,-}^{B(i)} \\
     H_0 = \omega_c a^\dagger a + \omega_A J_{z}^A + \omega_B J_{z}^B \\
     H_\text{int} = g_A (a + a^\dagger) (J_{+}^A + J_{-}^A) +  g_B (a + a^\dagger) (J_{+}^B + J_{-}^B)
 \end{gather}
 
-Now if we go to the interaction picture with a unitary transformation $U = \text{exp}(i t H_0)$, $H_I = U H_\text{int} U^\dagger$, we will see that terms of the new Hamiltonian with $a J_{-}^A, a J_{-}^B$ and $a^\dagger J_{+}^A, a^\dagger J_{+}^B$ will contain fast oscillating exponents with frequencies $2 \omega_c$. We go to the \textit{rotating wave approximation} (RWA), by dropping these terms from the Hamiltonian, and then going out of the interaction picture back to the Schrödinger picture.
+\noindent Now if we go to the interaction picture with a unitary transformation $U = \text{exp}(i t H_0)$, $H_I = U H_\text{int} U^\dagger$, we will see that terms of the new Hamiltonian with $a J_{-}^A, a J_{-}^B$ and $a^\dagger J_{+}^A, a^\dagger J_{+}^B$ will contain fast oscillating exponents with frequencies $2 \omega_c$. We apply the \textit{rotating wave approximation} (RWA) by dropping these terms from the Hamiltonian, and then going  back to the Schrödinger picture.
 
 \begin{gather}
     H_0 = \omega_c a^\dagger a + \omega_A J_{z}^A + \omega_B J_{z}^B \\
     H_\text{RWA} = g_A (a J_{+}^A + a^\dagger J_{-}^A) + g_B (a J_{+}^B + a^\dagger J_{-}^B)
 \end{gather}
 
+\noindent In order to arrive at the dispersive regime Hamiltonian, we can do a following unitary transform:
+\begin{gather}
+    U = e^S,~~~~~ S(t) = const, ~~~~~ S^\dagger = - S
+\end{gather}
+
+\noindent Then the  transformed Hamiltonian:
+
+\begin{gather}
+    H' = U H U^\dagger + i \dot{U} U^\dagger = U H U^\dagger = e^S H e^{S^\dagger} = e^S H e^{-S}
+\end{gather}
+
+\noindent Using Baker-Campbell-Hausdorff formula we obtain
+
+\begin{gather}
+    H' = H + [S,H] + \sum_{k=2}^{+ \infty} \frac{[S,H]_k}{k!}
+\end{gather}
+
+\noindent This expression might look somewhat intimidating, since it has an infinite number of commutators which we need to compute to obtain the final result. But once we compute the first commutator $[S,H]$, we will see that actually the rest of the series is $o(g^2)$ ($g = max\{g_A,g_B\}$), so for a second-order approximation we don't need any of the higher-order terms. Let's choose $S$ such that 
+\begin{gather}
+    [S,H_0] = - H_\text{int} \label{eq:S_condition}
+\end{gather}
+\noindent then
+\begin{gather}
+    H' = H_0 + H_\text{int} + [S,H_0] + [S, H_\text{int}] + ... = H_0 + [S, H_\text{int}] + ...
+\end{gather}
+
+\noindent One can show that $S$ that satisfies these conditions can be written in a form
+\begin{gather}
+    S = \lambda_A g_A (a J_{+}^A - a^\dagger J_{-}^A) + \lambda_B g_B (a J_{+}^B - a^\dagger J_{-}^B) \label{eq:SW_trans}
+\end{gather}
+\noindent where $\lambda_A$ and $\lambda_B$ can be found from substituting \ref{eq:SW_trans} into \ref{eq:S_condition}. After some algebra we obtain: 
+
+\begin{gather}
+    \lambda_{A,B} = - \frac{1}{\Delta_{A,B}},~~~~~\Delta_{A,B} = \omega_c - \omega_{A,B}
+\end{gather}
+
+\noindent Now the final step is to compute $[S,H_\text{int}]$. After some algebra we obtain the expression
+\begin{gather}
+    [S,H_\text{int}] = -\sum_{\alpha=A,B} \frac{2 g_\alpha}{\Delta_\alpha} (a^\dagger a J_z^\alpha + J_{+}^\alpha J_{-}^\alpha) - g_A g_B \left( \frac{1}{\Delta_A} + \frac{1}{\Delta_B} \right)  (J_{+}^A J_{-}^B + J_{-}^A J_{+}^B)
+\end{gather}
 
 \subsubsection{Effective Hamiltonian}
 
