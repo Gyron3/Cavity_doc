@@ -12,7 +12,7 @@
 \contentsline {subsubsection}{\numberline {2.2.1}Magneto-optical trap}{8}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Optical molasses}{8}{subsubsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.3}Atom-light interaction}{9}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Effective Hamiltonian}{11}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.1}Effective Hamiltonian}{10}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}One-axis twisting}{11}{subsubsection.2.3.2}%
 \contentsline {section}{\numberline {3}Optomechanics}{11}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Cavity optomechanics}{11}{subsection.3.1}%

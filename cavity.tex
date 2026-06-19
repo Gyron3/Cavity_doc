@@ -524,12 +524,14 @@ where $g_A = \mathcal{E}_0 \cdot D_A$, $g_B = \mathcal{E}_0 \cdot D_B$.
     H_\text{RWA} = g_A (a J_{+}^A + a^\dagger J_{-}^A) + g_B (a J_{+}^B + a^\dagger J_{-}^B)
 \end{gather}
 
+\subsubsection{Effective Hamiltonian}
+
 \noindent In order to arrive at the dispersive regime Hamiltonian, we can do a following unitary transform:
 \begin{gather}
     U = e^S,~~~~~ S(t) = const, ~~~~~ S^\dagger = - S
 \end{gather}
 
-\noindent Then the  transformed Hamiltonian:
+\noindent Then the transformed Hamiltonian:
 
 \begin{gather}
     H' = U H U^\dagger + i \dot{U} U^\dagger = U H U^\dagger = e^S H e^{S^\dagger} = e^S H e^{-S}
@@ -538,34 +540,58 @@ where $g_A = \mathcal{E}_0 \cdot D_A$, $g_B = \mathcal{E}_0 \cdot D_B$.
 \noindent Using Baker-Campbell-Hausdorff formula we obtain
 
 \begin{gather}
-    H' = H + [S,H] + \sum_{k=2}^{+ \infty} \frac{[S,H]_k}{k!}
+    H' = H_0 + H_\text{int} + [S,H_0] + [S,H_\text{int}] + \frac{1}{2} [S,[S,H_0]] + \left\{ \frac{1}{2} [S,[S,H_\text{int}]] + \sum_{k=3}^{+ \infty} \frac{[S,H]_k}{k!} \right\}
 \end{gather}
 
-\noindent This expression might look somewhat intimidating, since it has an infinite number of commutators which we need to compute to obtain the final result. But once we compute the first commutator $[S,H]$, we will see that actually the rest of the series is $o(g^2)$ ($g = max\{g_A,g_B\}$), so for a second-order approximation we don't need any of the higher-order terms. Let's choose $S$ such that 
+\noindent  Let's choose $S$ such that 
 \begin{gather}
     [S,H_0] = - H_\text{int} \label{eq:S_condition}
 \end{gather}
 \noindent then
-\begin{gather}
-    H' = H_0 + H_\text{int} + [S,H_0] + [S, H_\text{int}] + ... = H_0 + [S, H_\text{int}] + ...
-\end{gather}
-
-\noindent One can show that $S$ that satisfies these conditions can be written in a form
+\begin{align}
+    H' &= H_0 + H_\text{int} + [S,H_0] + [S, H_\text{int}] + \frac{1}{2} [S,[S,H_0]] + \left\{ \frac{1}{2} [S,[S,H_\text{int}]] + \sum_{k=3}^{+ \infty} \frac{[S,H]_k}{k!} \right\} = \notag \\
+    &= H_0 + \frac{1}{2} [S, H_\text{int}] + \left\{ \frac{1}{2} [S,[S,H_\text{int}]] + \sum_{k=3}^{+ \infty} \frac{[S,H]_k}{k!} \right\}
+\end{align}
+\noindent This expression might look somewhat intimidating, since it has an infinite number of commutators which we need to compute to obtain the final result. But let's not lose hope just yet and compute the first commutator $[S, H_\text{int}]$. One can show that $S$ that satisfies these conditions can be written in a form 
 \begin{gather}
     S = \lambda_A g_A (a J_{+}^A - a^\dagger J_{-}^A) + \lambda_B g_B (a J_{+}^B - a^\dagger J_{-}^B) \label{eq:SW_trans}
 \end{gather}
 \noindent where $\lambda_A$ and $\lambda_B$ can be found from substituting \ref{eq:SW_trans} into \ref{eq:S_condition}. After some algebra we obtain: 
 
 \begin{gather}
-    \lambda_{A,B} = - \frac{1}{\Delta_{A,B}},~~~~~\Delta_{A,B} = \omega_c - \omega_{A,B}
+    \lambda_{A,B} = - \frac{1}{\Delta_{A,B}},~~~~~\Delta_{A,B} = \omega_c - \omega_{A,B} \\
+    S = - \frac{g_A}{\Delta_A} (a J_{+}^A - a^\dagger J_{-}^A) - \frac{g_B}{\Delta_B} (a J_{+}^B - a^\dagger J_{-}^B)  \label{eq:S_expr}
 \end{gather}
 
-\noindent Now the final step is to compute $[S,H_\text{int}]$. After some algebra we obtain the expression
+\noindent From the expression for $S$ (\ref{eq:S_expr}), we can see that actually the rest of the series in curly brackets will be $o(g_A/\Delta_A, g_B/\Delta_B)$. This fact gives us the condition for the convergence of this series, for neglecting the higher order terms (dispersive regime): 
 \begin{gather}
-    [S,H_\text{int}] = -\sum_{\alpha=A,B} \frac{2 g_\alpha}{\Delta_\alpha} (a^\dagger a J_z^\alpha + J_{+}^\alpha J_{-}^\alpha) - g_A g_B \left( \frac{1}{\Delta_A} + \frac{1}{\Delta_B} \right)  (J_{+}^A J_{-}^B + J_{-}^A J_{+}^B)
+    H_\text{disp} = H_0 + \frac{1}{2} [S, H_\text{int}], ~~~\text{if} ~~~|\Delta_A| \gg g_A, |\Delta_B| \gg g_B
 \end{gather}
 
-\subsubsection{Effective Hamiltonian}
+
+Now the final step is to compute $[S,H_\text{int}]$. After some algebra we obtain the expression
+\begin{gather}
+    [S,H_\text{int}] = -\sum_{\alpha=A,B} \frac{2 g_\alpha^2}{\Delta_\alpha} (a^\dagger a J_z^\alpha + J_{+}^\alpha J_{-}^\alpha) - g_A g_B \left( \frac{1}{\Delta_A} + \frac{1}{\Delta_B} \right)  (J_{+}^A J_{-}^B + J_{-}^A J_{+}^B)
+\end{gather}
+\noindent The first part of this expression is the dispersive atom-cavity interaction Hamiltonian. The second one is cavity-mediated spin-spin interaction. This transformation is known as Schrieffer-Wolff transformation. 
+
+Now we can re-parametrize the variables so that we have more experimentally-important variables
+\begin{gather}
+    A \rightarrow ~\uparrow , ~~~~~ B \rightarrow ~\downarrow  \\
+    \omega_A \rightarrow \omega_e - \frac{\omega_a}{2}, ~~~~~ \omega_B \rightarrow \omega_e + \frac{\omega_a}{2}\\
+    \Delta = \omega_c - \omega_e, ~~~~~    \Delta_A \rightarrow \Delta + \frac{\omega_a}{2}, ~~~~~\Delta_B \rightarrow \Delta - \frac{\omega_a}{2}\\
+    \sigma_z = |g_\uparrow \rangle \langle g_\uparrow | - |g_\downarrow \rangle \langle g_\downarrow | = \sigma_z^B - \sigma_z^A + \sigma_{+}^A \sigma_{-}^A - \sigma_{+}^B \sigma_{+}^B \\
+    J_z = \frac{1}{2} (J_z^B - J_z^A + J_{+}^A J_{-}^A - J_{+}^B J_{-}^B )\\
+    \sigma_N =  |g_\uparrow \rangle \langle g_\uparrow | + |g_\downarrow \rangle \langle g_\downarrow | = - \sigma_z^B - \sigma_z^A + \sigma_{+}^A \sigma_{-}^A + \sigma_{+}^B \sigma_{+}^B \\
+    J_N =\frac{1}{2} ( - J_z^B - J_z^A + J_{+}^A J_{-}^A + J_{+}^B J_{-}^B) 
+\end{gather} 
+
+Terms like $J_{+}^A J_{-}^A$ are proportional to the corresponding excited state population. We will assume that we can neglect those terms because the population of both excited levels is negligible ($M_e^A, M_e^B \ll 1$) because of spontaneous decay of the excited state, that has lifetime of $\tau = 26.24$ ns \cite{Steck2003}. Furthermore, terms that contain $J_N$ are just constants proportional to number of atoms $N$, so we can get rid of them in the Hamiltonian too. We will also assume equal atom-cavity couplings $g_A = g_B = g$.After applying all of those assumptions we get the effective Hamiltonian:
+
+\begin{gather}
+    H_\text{eff} = \omega_c a^\dagger a + \omega_a J_z + \frac{4 g^2}{\omega_a (1-\frac{4 \Delta^2}{\omega_a^2})} a^\dagger a J_z
+\end{gather}
+
 
 \subsubsection{One-axis twisting}
 
