@@ -573,7 +573,12 @@ Now the final step is to compute $[S,H_\text{int}]$. After some algebra we obtai
 \begin{gather}
     [S,H_\text{int}] = -\sum_{\alpha=A,B} \frac{2 g_\alpha^2}{\Delta_\alpha} (a^\dagger a J_z^\alpha + J_{+}^\alpha J_{-}^\alpha) - g_A g_B \left( \frac{1}{\Delta_A} + \frac{1}{\Delta_B} \right)  (J_{+}^A J_{-}^B + J_{-}^A J_{+}^B)
 \end{gather}
-\noindent The first part of this expression is the dispersive atom-cavity interaction Hamiltonian. The second one is cavity-mediated spin-spin interaction. This transformation is known as Schrieffer-Wolff transformation. 
+\noindent The first part of this expression is the dispersive atom-cavity interaction Hamiltonian. The second one is cavity-mediated spin-spin interaction. This transformation is known as Schrieffer-Wolff transformation. We can write down a full Hamiltonian:
+
+\begin{gather}
+    H_\text{eff} = \omega_c a^\dagger a + \omega_A J_{z}^A + \omega_B J_{z}^B  -\sum_{\alpha=A,B} \frac{g_\alpha^2}{\Delta_\alpha} (a^\dagger a J_z^\alpha + J_{+}^\alpha J_{-}^\alpha) - \frac{g_A g_B}{2} \left( \frac{1}{\Delta_A} + \frac{1}{\Delta_B} \right)  (J_{+}^A J_{-}^B + J_{-}^A J_{+}^B)
+    \label{eq:full_disp_ham}
+\end{gather}
 
 Now we can re-parametrize the variables so that we have more experimentally-important variables
 \begin{gather}
@@ -586,14 +591,49 @@ Now we can re-parametrize the variables so that we have more experimentally-impo
     J_N =\frac{1}{2} ( - J_z^B - J_z^A + J_{+}^A J_{-}^A + J_{+}^B J_{-}^B) 
 \end{gather} 
 
-Terms like $J_{+}^A J_{-}^A$ are proportional to the corresponding excited state population. We will assume that we can neglect those terms because the population of both excited levels is negligible ($M_e^A, M_e^B \ll N$) because of spontaneous decay of the excited state, that has lifetime of $\tau = 26.24$ ns \cite{Steck2003}. Furthermore, terms that contain $J_N$ are just constants proportional to number of atoms $N$, so we can get rid of them in the Hamiltonian too. For $\pi$-polarized light, Clebsch-Gordan coefficientsfor relevant transitions are the 
+Terms like $J_{+}^A J_{-}^A$ are proportional to the corresponding excited state population. We will assume that we can neglect those terms because the population of both excited levels is negligible ($M_e^A, M_e^B \ll N$) because of spontaneous decay of the excited state, that has lifetime of $\tau = 26.24$ ns \cite{Steck2003}. Furthermore, terms that contain $J_N$ are just constants proportional to number of atoms $N$, so we can get rid of them in the Hamiltonian too. For $\pi$-polarized light, Clebsch-Gordan coefficients for the relevant transitions are listed in tables \ref{tab:dipole_pi_F1} and \ref{tab:dipole_pi_F2}. Since the quantity entering the full Hamiltonian \ref{eq:full_disp_ham} is $g^2$, we can calculate that $g_A^2  \sim 1/30 + 3/10 =  1/3$ and $g_B^2 \sim  1/6 + 1/6 =   1/3$. That means that we can pretty safely assume that $g_A = g_B = g$. 
+
+After applying all of those assumptions we get the effective Hamiltonian:
+
+\begin{gather}
+    H_\text{eff} = \omega_c a^\dagger a + \omega_a J_z + \frac{4 g^2}{\omega_a (1-\frac{4 \Delta^2}{\omega_a^2})} a^\dagger a J_z
+\end{gather}
+
+\begin{table}[ht]
+    \renewcommand{\arraystretch}{2}
+    \centering
+    \caption{$^{87}$Rb D$_2$ dipole matrix elements for $\pi$ transitions
+    ($F=1,m_F\rightarrow F',m_F'=m_F$), expressed as multiples of
+    $\langle J=\tfrac12 | er | J'=\tfrac32\rangle$.}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        & $m_F=-1$ & $m_F=0$ & $m_F=1$ \\
+        \hline
+        $F'=2$
+        & $-\sqrt{\frac{1}{8}}$
+        & $-\sqrt{\frac{1}{6}}$
+        & $-\sqrt{\frac{1}{8}}$ \\
+        \hline
+        $F'=1$
+        & $-\sqrt{\frac{5}{24}}$
+        & $0$
+        & $\sqrt{\frac{5}{24}}$ \\
+        \hline
+        $F'=0$
+        & 
+        & $\sqrt{\frac{1}{6}}$
+        & \\
+        \hline
+    \end{tabular}
+    \label{tab:dipole_pi_F1}
+\end{table}
 
 \begin{table}[ht]
     \renewcommand{\arraystretch}{2}
     \centering
     \caption{$^{87}$Rb D$_2$ dipole matrix elements for $\pi$ transitions
     ($F=2,m_F\rightarrow F',m_F'=m_F$), expressed as multiples of
-    $\langle J=\tfrac12 \| er \| J'=\tfrac32\rangle$.}
+    $\langle J=\tfrac12 | er | J'=\tfrac32\rangle$.}
     \begin{tabular}{|c|c|c|c|c|c|}
         \hline
         & $m_F=-2$ & $m_F=-1$ & $m_F=0$ & $m_F=1$ & $m_F=2$ \\
@@ -620,42 +660,13 @@ Terms like $J_{+}^A J_{-}^A$ are proportional to the corresponding excited state
         &  \\
         \hline
     \end{tabular}
-\end{table}
-
-\begin{table}[ht]
-    \renewcommand{\arraystretch}{2}
-    \centering
-    \caption{$^{87}$Rb D$_2$ dipole matrix elements for $\pi$ transitions
-    ($F=1,m_F\rightarrow F',m_F'=m_F$), expressed as multiples of
-    $\langle J=\tfrac12 \| er \| J'=\tfrac32\rangle$.}
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-        & $m_F=-1$ & $m_F=0$ & $m_F=1$ \\
-        \hline
-        $F'=2$
-        & $-\sqrt{\frac{1}{8}}$
-        & $-\sqrt{\frac{1}{6}}$
-        & $-\sqrt{\frac{1}{8}}$ \\
-        \hline
-        $F'=1$
-        & $-\sqrt{\frac{5}{24}}$
-        & $0$
-        & $\sqrt{\frac{5}{24}}$ \\
-        \hline
-        $F'=0$
-        & 
-        & $\sqrt{\frac{1}{6}}$
-        & \\
-        \hline
-    \end{tabular}
+    \label{tab:dipole_pi_F2}
 \end{table}
 
 
-We will also assume equal atom-cavity couplings $g_A = g_B = g$. After applying all of those assumptions we get the effective Hamiltonian:
 
-\begin{gather}
-    H_\text{eff} = \omega_c a^\dagger a + \omega_a J_z + \frac{4 g^2}{\omega_a (1-\frac{4 \Delta^2}{\omega_a^2})} a^\dagger a J_z
-\end{gather}
+
+
 
 
 \subsubsection{One-axis twisting}
