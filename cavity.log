@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.10)  22 JUN 2026 10:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.2.10)  14 JUL 2026 14:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -997,24 +997,24 @@ Package biblatex Info: Reference segment=0 on input line 21.
 
  [1
 
-{C:/Users/agurchen/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4] [5] [6]
-<figures/rb_levels.pdf, id=225, 421.575pt x 550.055pt>
+{C:/Users/agurchen/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4] [5] [6] [7]
+<figures/rb_levels.pdf, id=236, 421.575pt x 550.055pt>
 File: figures/rb_levels.pdf Graphic file (type pdf)
 <use figures/rb_levels.pdf>
-Package pdftex.def Info: figures/rb_levels.pdf  used on input line 414.
+Package pdftex.def Info: figures/rb_levels.pdf  used on input line 427.
 (pdftex.def)             Requested size: 360.00137pt x 469.72278pt.
- [7 <./figures/rb_levels.pdf>]
-<figures/effective_levels_rb.pdf, id=242, 677.53125pt x 551.05875pt>
+ [8 <./figures/rb_levels.pdf>]
+<figures/effective_levels_rb.pdf, id=252, 677.53125pt x 551.05875pt>
 File: figures/effective_levels_rb.pdf Graphic file (type pdf)
 <use figures/effective_levels_rb.pdf>
-Package pdftex.def Info: figures/effective_levels_rb.pdf  used on input line 426.
+Package pdftex.def Info: figures/effective_levels_rb.pdf  used on input line 439.
 (pdftex.def)             Requested size: 360.00137pt x 292.80809pt.
- [8 <./figures/effective_levels_rb.pdf>]
-Overfull \hbox (23.11691pt too wide) in paragraph at lines 475--476
+ [9 <./figures/effective_levels_rb.pdf>]
+Overfull \hbox (23.11691pt too wide) in paragraph at lines 488--489
  [][] 
  []
 
-[9] [10] [11] [12] (cavity.aux)
+[10] [11] [12] [13] (cavity.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -1026,17 +1026,17 @@ Package logreq Info: Writing requests to 'cavity.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35661 strings out of 467871
- 707441 string characters out of 5416924
- 1647100 words of memory out of 5000000
+ 35668 strings out of 467871
+ 707526 string characters out of 5416924
+ 1647101 words of memory out of 5000000
  63843 multiletter control sequences out of 15000+600000
  642321 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,11n,118p,2535b,1806s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/agurchen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on cavity.pdf (12 pages, 499287 bytes).
+Output written on cavity.pdf (13 pages, 501849 bytes).
 PDF statistics:
- 452 PDF objects out of 1000 (max. 8388607)
- 122 named destinations out of 1000 (max. 500000)
+ 464 PDF objects out of 1000 (max. 8388607)
+ 129 named destinations out of 1000 (max. 500000)
  211 words of extra memory for PDF output out of 10000 (max. 10000000)
 
