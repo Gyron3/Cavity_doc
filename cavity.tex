@@ -365,11 +365,20 @@ Please take into account that "lossless and symmetric ($r_1 = r_2,~t=1$) case" i
 
 If one represents $|t|, |r_1|, |r_2|$ as follows:
 \begin{align}
-    |r_1| &= 1 - a , ~ a \ll 1\\
-    |r_2| &= 1- b  , ~ b \ll 1\\
-    |t| &= 1-c , ~ c \ll 1
+    |r_1|^2 &= 1 - T_1 , ~ T_1 \ll 1\\
+    |r_2|^2 &= 1 - T_2  , ~ T_2 \ll 1\\
+    |t|^4 &= 1 - A_L , ~ A_L \ll 1
 \end{align}
-it becomes possible to make series expansions of all the quantities derived above. After some algebra it turns out that if one experimentally measures finesse, reflected intensity on resonance and transmitted intensity on resonance, intracavity intensity, mirror parameters and cavity losses can be derived from these three parameters with simple expressions:
+it becomes possible to make series expansions of all the quantities derived above:
+
+\begin{gather}
+    \frac{I_c^{res}}{I_0} = \frac{16 T_1}{(A_L + T_1 + T_2)^2} \\
+    \frac{I_c^{res, +}}{I_0} = \frac{4 T_1}{(A_L + T_1 + T_2)^2} \\
+    \mathcal{F} = \frac{2 \pi}{A_L + T_1 + T_2} \\
+    R_c = \left( \frac{A_L - T_1 + T_2}{A_L + T_1 + T_2} \right)^2 \\
+    T_c = \frac{4 T_1 T_2}{(A_L + T_1 + T_2)^2}
+\end{gather}
+After some algebra it turns out that if one experimentally measures finesse, reflected intensity on resonance and transmitted intensity on resonance, intracavity intensity, mirror parameters and cavity losses can be derived from these three parameters with simple expressions:
 \begin{gather}
     \frac{I_c^{res}}{I_0} = \frac{4 \mathcal{F}}{\pi} (1 - \sqrt{R_c}) \\
     \frac{I_c^{res, +}}{I_0} = \frac{\mathcal{F}}{\pi} (1 - \sqrt{R_c}) \\
@@ -383,15 +392,8 @@ $A_{L}$ here is a round-trip loss coefficient (without mirror leakage). If we wa
     A_c &= A_{L} \frac{I_c^{res, +}}{I_0} = 1 - R_c - T_c
 \end{align}
 
-We can also express intracavity power, finesse and cavity reflection and transmission through mirror parameters and cavity loss:
 
-\begin{gather}
-    \frac{I_c^{res}}{I_0} = \frac{16 T_1}{(A_L + T_1 + T_2)^2} \\
-    \frac{I_c^{res, +}}{I_0} = \frac{4 T_1}{(A_L + T_1 + T_2)^2} \\
-    \mathcal{F} = \frac{2 \pi}{A_L + T_1 + T_2} \\
-    R_c = \left( \frac{A_L - T_1 + T_2}{A_L + T_1 + T_2} \right)^2 \\
-    T_c = \frac{4 T_1 T_2}{(A_L + T_1 + T_2)^2}
-\end{gather}
+Now we can notice a peculiar result: the intracavity power and reflected power change if we swap $T_1$ and $T_2$ (if we couple the light from the other side of the same resonator), but the transmitted power and finesse is invariant. 
 
 \subsection{Mode matching}
 Usually, depending on the alignment of the input beam with respect to the cavity axis, the beam waist and wavefront matching, and the quality of the optical components, only a fraction of the incident light couples into the desired cavity mode (usually the fundamental $\text{TEM}_{00}$ mode). This fraction is referred to as the mode-matching efficiency:
