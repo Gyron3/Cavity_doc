@@ -357,11 +357,11 @@ Finesse is also related to the intensity enhancement inside of the cavity:
 \begin{align}
     \frac{I_c^{res}}{I_0} &= 4 \frac{1-r_1^2}{(1-t^2 r_1 r_2)^2} \label{eq:enh}
 \end{align}
-In a lossless and symmetric ($r_1 = r_2,~t=0$) case it simply yields:
+In a lossless and symmetric ($r_1 = r_2,~t=1$) case it simply yields:
 \begin{align}
     \frac{I_c^{res}}{I_0} &= \frac{4 \mathcal{F}}{\pi} \label{eq:enh_ideal}
 \end{align}
-Please take into account that "lossless and symmetric ($r_1 = r_2,~t=0$) case" is never actually achievable in real life, and the results \ref{eq:enh_ideal} for ideal case and \ref{eq:enh} for a real case vary \textbf{significantly}, sometimes \textbf{by several orders of magnitude}.
+Please take into account that "lossless and symmetric ($r_1 = r_2,~t=1$) case" is never actually achievable in real life, and the results \ref{eq:enh_ideal} for ideal case and \ref{eq:enh} for a real case vary \textbf{significantly}, sometimes \textbf{by several orders of magnitude}.
 
 If one represents $|t|, |r_1|, |r_2|$ as follows:
 \begin{align}
@@ -370,25 +370,38 @@ If one represents $|t|, |r_1|, |r_2|$ as follows:
     |t| &= 1-c , ~ c \ll 1
 \end{align}
 it becomes possible to make series expansions of all the quantities derived above. After some algebra it turns out that if one experimentally measures finesse, reflected intensity on resonance and transmitted intensity on resonance, intracavity intensity, mirror parameters and cavity losses can be derived from these three parameters with simple expressions:
+\begin{gather}
+    \frac{I_c^{res}}{I_0} = \frac{4 \mathcal{F}}{\pi} (1 - \sqrt{R_c}) \\
+    \frac{I_c^{res, +}}{I_0} = \frac{\mathcal{F}}{\pi} (1 - \sqrt{R_c}) \\
+    T_1 = \pi \frac{1 - \sqrt{R_c}}{\mathcal{F}} \\
+    T_2 = \pi \frac{T_c}{\mathcal{F} (1 - \sqrt{R_c})} \\
+    % A_{loss} &= 1 - T_a T_b = \pi \frac{1-R_c-T_c}{2 \mathcal{F} (1 - \sqrt{R_c})}
+    A_{L} = 1 - (T_a T_b)^2 = \pi \frac{1-R_c-T_c}{\mathcal{F} (1 - \sqrt{R_c})}
+\end{gather}
+$A_{L}$ here is a round-trip loss coefficient (without mirror leakage). If we want to calculate the overall steady-state loss coefficient its given by a trivial expression (which is consistent with the equations above):
 \begin{align}
-    \frac{I_c^{res}}{I_0} &= \frac{4 \mathcal{F}}{\pi} (1 - \sqrt{R_c}) \\
-    R_1 &= 1- \pi \frac{1 - \sqrt{R_c}}{\mathcal{F}} \\
-    R_2 &= 1- \pi \frac{T_c}{\mathcal{F} (1 - \sqrt{R_c})} \\
-    A_{loss} &= 1 - T_a T_b = \pi \frac{1-R_c-T_c}{2 \mathcal{F} (1 - \sqrt{R_c})}
+    A_c &= A_{L} \frac{I_c^{res, +}}{I_0} = 1 - R_c - T_c
 \end{align}
-$A_{loss}$ here is a single-pass loss coefficient. If we want to calculate the overall steady-state loss coefficient its given by a trivial expression (which is consistent with the equations above):
-\begin{align}
-    A_{loss}^{full} &= 1 - R_c - T_c
-\end{align}
+
+We can also express intracavity power, finesse and cavity reflection and transmission through mirror parameters and cavity loss:
+
+\begin{gather}
+    \frac{I_c^{res}}{I_0} = \frac{16 T_1}{(A_L + T_1 + T_2)^2} \\
+    \frac{I_c^{res, +}}{I_0} = \frac{4 T_1}{(A_L + T_1 + T_2)^2} \\
+    \mathcal{F} = \frac{2 \pi}{A_L + T_1 + T_2} \\
+    R_c = \left( \frac{A_L - T_1 + T_2}{A_L + T_1 + T_2} \right)^2 \\
+    T_c = \frac{4 T_1 T_2}{(A_L + T_1 + T_2)^2}
+\end{gather}
 
 \subsection{Mode matching}
-
-Usually, depending on how well-aligned the beam is to the cavity mode, the focusing parameters of the beam, the quality of collimating lens, there is a coupling efficiency that represents the proportion of the beam intensity, coupling into the desired mode of the cavity (usually $\text{TE}_{00}$). 
+Usually, depending on the alignment of the input beam with respect to the cavity axis, the beam waist and wavefront matching, and the quality of the optical components, only a fraction of the incident light couples into the desired cavity mode (usually the fundamental $\text{TEM}_{00}$ mode). This fraction is referred to as the mode-matching efficiency:
 \begin{align}
     \eta &= \frac{I_{00}}{I_0}, ~ I_0 = I_{00} + I_h
 \end{align}
 
-The rest of the intensity ($I_h$) is partly decomposed into high-order Hermite-Gaussian modes of the cavity, and partly plainly reflected from the mirror, because they cannot be decomposed into the high-order modes. The statement, that an arbitrary beam can be decomposed into HG modes is only true for the beams of the same pointing (propagating along the same axis), so if we have a beam thats misaligned with the cavity axis, there will inevitably be a part of the beam that cannot be decomposed into HG modes.
+The remaining intensity, $I_h$, consists of two contributions. One part couples into higher-order Hermite-Gaussian cavity modes, while the other does not couple to any cavity mode and is directly reflected from the input mirror. An ideal paraxial beam can always be expanded in the HG basis of the cavity. In practice, however, imperfections such as  non-paraxial field components, clipping, aberrations reduce the overlap with the cavity eigenmodes, producing light that can not be decomposed into HG modes.
+
+
 
 Taking into account the coupling efficiency $\eta$ we can express apparent reflectance and transmittance of the cavity through the actual ones ($R_c = I_r^{cav}/I_{00}, ~R_c^{app} = I_r^{full}/I_{0}, ~T_c = I_t^{cav}/I_{00}, ~T_c^{app} = I_t^{full}/I_{0}$):
 \begin{align}
