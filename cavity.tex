@@ -380,14 +380,14 @@ it becomes possible to make series expansions of all the quantities derived abov
 \end{gather}
 After some algebra it turns out that if one experimentally measures finesse, reflected intensity on resonance and transmitted intensity on resonance, intracavity intensity, mirror parameters and cavity losses can be derived from these three parameters with simple expressions:
 \begin{gather}
-    \frac{I_c^{res}}{I_0} = \frac{4 \mathcal{F}}{\pi} (1 - \sqrt{R_c}) \\
-    \frac{I_c^{res, +}}{I_0} = \frac{\mathcal{F}}{\pi} (1 - \sqrt{R_c}) \\
-    T_1 = \pi \frac{1 - \sqrt{R_c}}{\mathcal{F}} \\
-    T_2 = \pi \frac{T_c}{\mathcal{F} (1 - \sqrt{R_c})} \\
+    \frac{I_c^{res}}{I_0} = \frac{4 \mathcal{F}}{\pi} (1 \pm \sqrt{R_c}) \\
+    \frac{I_c^{res, +}}{I_0} = \frac{\mathcal{F}}{\pi} (1 \pm \sqrt{R_c}) \\
+    T_1 = \pi \frac{1 \pm \sqrt{R_c}}{\mathcal{F}} \\
+    T_2 = \pi \frac{T_c}{\mathcal{F} (1 \pm \sqrt{R_c})} \\
     % A_{loss} &= 1 - T_a T_b = \pi \frac{1-R_c-T_c}{2 \mathcal{F} (1 - \sqrt{R_c})}
-    A_{L} = 1 - (T_a T_b)^2 = \pi \frac{1-R_c-T_c}{\mathcal{F} (1 - \sqrt{R_c})}
+    A_{L} = 1 - (T_a T_b)^2 = \pi \frac{1-R_c-T_c}{\mathcal{F} (1 \pm \sqrt{R_c})}
 \end{gather}
-$A_{L}$ here is a round-trip loss coefficient (without mirror leakage). If we want to calculate the overall steady-state loss coefficient its given by a trivial expression (which is consistent with the equations above):
+$A_{L}$ here is a round-trip loss coefficient (without mirror leakage). In these expressions the plus sign is taken if $T_1 > A_L + T_2$ (or equivalently $T_1 > \pi/\mathcal{F}$), and the minus sign is taken otherwise. If we want to calculate the overall steady-state loss coefficient its given by a trivial expression (which is consistent with the equations above):
 \begin{align}
     A_c &= A_{L} \frac{I_c^{res, +}}{I_0} = 1 - R_c - T_c
 \end{align}
